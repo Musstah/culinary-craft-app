@@ -1,0 +1,351 @@
+[
+  {
+    "name": "Spicy Arrabiata Penne",
+    "instructions": "Bring a large pot of water to a boil. Add kosher salt to the boiling water, then add the pasta. Cook according to the package instructions, about 9 minutes.\r\nIn a large skillet over medium-high heat, add the olive oil and heat until the oil starts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Add the chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste. Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil.\r\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes and more basil and serve warm.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "penne rigate": "1 pound",
+      "olive oil": "1/4 cup",
+      "garlic": "3 cloves",
+      "chopped tomatoes": "1 tin",
+      "red chile flakes": "1/2 teaspoon",
+      "italian seasoning": "1/2 teaspoon",
+      "basil": "6 leaves",
+      "Parmigiano-Reggiano": "spinking"
+    },
+    "tags": ["Pasta", "Curry"],
+    "averageRating": 8.2,
+    "averageTime": 45,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Creamy Garlic Parmesan Linguine",
+    "instructions": "Boil linguine according to package instructions. In a skillet, sauté minced garlic in butter until fragrant. Add heavy cream, Parmesan cheese, and black pepper. Toss linguine in the creamy sauce. Garnish with fresh parsley and serve hot.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "linguine": "1 pound",
+      "butter": "1/2 cup",
+      "minced garlic": "4 cloves",
+      "heavy cream": "1 cup",
+      "Parmesan cheese": "1 cup (grated)",
+      "black pepper": "1/2 teaspoon",
+      "fresh parsley": "for garnish"
+    },
+    "tags": ["Cream", "Cheese"],
+    "averageRating": 7.6,
+    "averageTime": 60,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Mango Tango Chicken Skewers",
+    "instructions": "Marinate chicken chunks in mango puree, lime juice, and a blend of spices. Skewer and grill until cooked. Serve with a side of mango salsa and cilantro-lime rice.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "chicken chunks": "1.5 pounds",
+      "mango puree": "1 cup",
+      "lime juice": "2 tablespoons",
+      "spices blend": "1 tablespoon",
+      "mango salsa": "for serving",
+      "cilantro-lime rice": "for serving"
+    },
+    "tags": ["Fruit", "Sweet", "Cilantro"],
+    "averageRating": 6.1,
+    "averageTime": 55,
+    "level": "Beginner"
+  },
+  {
+    "name": "Spinach and Feta Stuffed Chicken",
+    "instructions": "Butterfly chicken breasts and stuff with a mixture of spinach, feta, and garlic. Bake until chicken is cooked through. Serve with roasted vegetables.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "chicken breasts": "4",
+      "spinach": "2 cups (chopped)",
+      "feta cheese": "1 cup (crumbled)",
+      "garlic": "3 cloves (minced)",
+      "roasted vegetables": "for serving"
+    },
+    "tags": ["Cheese"],
+    "averageRating": 7.6,
+    "averageTime": 80,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Honey Sriracha Glazed Salmon",
+    "instructions": "Mix honey, Sriracha, soy sauce, and minced ginger. Brush over salmon fillets and bake until glazed and flaky. Serve with steamed jasmine rice.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "salmon fillets": "4",
+      "honey": "1/4 cup",
+      "Sriracha": "2 tablespoons",
+      "soy sauce": "2 tablespoons",
+      "minced ginger": "1 teaspoon",
+      "jasmine rice": "for serving"
+    },
+    "tags": ["Fish", "Sweet", "Savory"],
+    "averageRating": 9.1,
+    "averageTime": 60,
+    "level": "Expert"
+  },
+  {
+    "name": "Caprese Quinoa Salad",
+    "instructions": "Cook quinoa and let it cool. Toss with cherry tomatoes, fresh mozzarella, basil, and a balsamic vinaigrette. Chill before serving.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "quinoa": "2 cups (cooked)",
+      "cherry tomatoes": "1 cup (halved)",
+      "fresh mozzarella": "1 cup (cubed)",
+      "basil": "1/2 cup (chopped)",
+      "balsamic vinaigrette": "1/4 cup"
+    },
+    "tags": ["Vinaigrette", "Salad"],
+    "averageRating": 8.9,
+    "averageTime": 40,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lemon Herb Grilled Shrimp",
+    "instructions": "Marinate shrimp in a mixture of lemon juice, garlic, and herbs. Grill until pink and opaque. Serve with a squeeze of fresh lemon.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "shrimp": "1.5 pounds",
+      "lemon juice": "1/4 cup",
+      "garlic": "2 cloves (minced)",
+      "mixed herbs": "1 tablespoon",
+      "fresh lemon": "for serving"
+    },
+    "tags": ["Herbs", "Seafood"],
+    "averageRating": 8.6,
+    "averageTime": 70,
+    "level": "Expert"
+  },
+  {
+    "name": "Vegetarian Chickpea Curry",
+    "instructions": "Sauté onions, garlic, and ginger. Add chickpeas, diced tomatoes, curry spices, and coconut milk. Simmer until flavors meld. Serve over basmati rice.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "onions": "2 (chopped)",
+      "garlic": "3 cloves (minced)",
+      "ginger": "1 tablespoon (minced)",
+      "chickpeas": "2 cans (drained and rinsed)",
+      "diced tomatoes": "1 can",
+      "curry spices": "2 tablespoons",
+      "coconut milk": "1 can",
+      "basmati rice": "for serving"
+    },
+    "tags": ["Vege", "Curry"],
+    "averageRating": 4.6,
+    "averageTime": 30,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Pesto Zucchini Noodles",
+    "instructions": "Spiralize zucchini into noodles. Sauté in olive oil until tender. Toss with homemade pesto, cherry tomatoes, and pine nuts.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "zucchini": "4",
+      "olive oil": "1/4 cup",
+      "pesto": "1/2 cup",
+      "cherry tomatoes": "1 cup (halved)",
+      "pine nuts": "2 tablespoons"
+    },
+    "tags": ["Pasta", "Noodles"],
+    "averageRating": 7.7,
+    "averageTime": 35,
+    "level": "Beginner"
+  },
+  {
+    "name": "Teriyaki Beef Stir-Fry",
+    "instructions": "Stir-fry thinly sliced beef with colorful bell peppers and broccoli. Add a homemade teriyaki sauce and serve over rice.",
+    "img": "SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "beef": "1.5 pounds (thinly sliced)",
+      "bell peppers": "2 (sliced)",
+      "broccoli": "1 head (cut into florets)",
+      "teriyaki sauce": "1/2 cup",
+      "rice": "for serving"
+    },
+    "tags": ["Meat", "Fry", "Stir"],
+    "averageRating": 8.9,
+    "averageTime": 75,
+    "level": "Expert"
+  },
+  {
+    "name": "Cajun Blackened Tilapia",
+    "instructions": "Rub tilapia fillets with Cajun seasoning. Pan-sear until blackened and cooked through. Serve with a squeeze of fresh lime.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "tilapia fillets": "4",
+      "Cajun seasoning": "2 tablespoons",
+      "fresh lime": "for serving"
+    },
+    "tags": ["Fish", "Lime"],
+    "averageRating": 6.3,
+    "averageTime": 50,
+    "level": "Expert"
+  },
+  {
+    "name": "Greek Salad with Orzo",
+    "instructions": "Cook orzo and let it cool. Mix with cucumber, cherry tomatoes, olives, feta, and a Greek dressing. Chill before serving.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "orzo": "1.5 cups (cooked)",
+      "cucumber": "1 (diced)",
+      "cherry tomatoes": "1 cup (halved)",
+      "olives": "1/2 cup (sliced)",
+      "feta cheese": "1/2 cup (crumbled)",
+      "Greek dressing": "1/4 cup"
+    },
+    "tags": ["Salad", "Feta", "Olives"],
+    "averageRating": 7.3,
+    "averageTime": 55,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Sweet Potato and Black Bean Enchiladas",
+    "instructions": "Roast sweet potatoes, mix with black beans, and stuff into tortillas. Top with enchilada sauce and cheese. Bake until bubbly.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "sweet potatoes": "2 (roasted and mashed)",
+      "black beans": "1 can (drained and rinsed)",
+      "tortillas": "8",
+      "enchilada sauce": "2 cups",
+      "cheese": "1 cup (shredded)"
+    },
+    "tags": ["Sweet", "Tortilla", "Enchilada"],
+    "averageRating": 5.8,
+    "averageTime": 40,
+    "level": "Beginner"
+  },
+  {
+    "name": "Raspberry Balsamic Glazed Chicken",
+    "instructions": "Glaze chicken breasts with a mixture of raspberry preserves and balsamic vinegar. Grill until cooked through. Serve with a side of roasted vegetables.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "chicken breasts": "4",
+      "raspberry preserves": "1/2 cup",
+      "balsamic vinegar": "1/4 cup",
+      "fresh lime": "for serving",
+      "roasted vegetables": "for serving"
+    },
+    "tags": ["Balsamic", "Veggies"],
+    "averageRating": 6.4,
+    "averageTime": 50,
+    "level": "Beginner"
+  },
+  {
+    "name": "Mushroom Risotto with Truffle Oil",
+    "instructions": "Sauté mushrooms and onions. Add Arborio rice and cook with vegetable broth until creamy. Drizzle with truffle oil before serving.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "mushrooms": "8 oz (sliced)",
+      "onions": "1 (chopped)",
+      "Arborio rice": "2 cups",
+      "vegetable broth": "4 cups (heated)",
+      "truffle oil": "1 tablespoon",
+      "Parmesan cheese": "1/2 cup (grated)"
+    },
+    "tags": ["Rice", "Beggies", "Truggle"],
+    "averageRating": 7.0,
+    "averageTime": 60,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Sesame Ginger Tofu Stir-Fry",
+    "instructions": "Cube tofu and stir-fry with broccoli, bell peppers, and snap peas. Toss in a sesame ginger sauce and serve over rice.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "tofu": "1 block (cubed)",
+      "broccoli": "1 head (cut into florets)",
+      "bell peppers": "2 (sliced)",
+      "snap peas": "1 cup",
+      "sesame ginger sauce": "1/3 cup",
+      "rice": "for serving"
+    },
+    "tags": ["Tofu", "Rice"],
+    "averageRating": 8.3,
+    "averageTime": 80,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Lemon Rosemary Roasted Chicken",
+    "instructions": "Rub chicken with lemon, rosemary, and garlic. Roast until golden brown and juices run clear. Serve with roasted potatoes.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "chicken": "1 whole (3-4 pounds)",
+      "lemon": "1 (sliced)",
+      "rosemary": "2 tablespoons (chopped)",
+      "garlic": "4 cloves (minced)",
+      "roasted potatoes": "for serving"
+    },
+    "tags": ["Potatoes", "Herbs"],
+    "averageRating": 7.1,
+    "averageTime": 45,
+    "level": "Beginner"
+  },
+  {
+    "name": "Pineapple Coconut Shrimp Skewers",
+    "instructions": "Marinate shrimp in a blend of pineapple juice, coconut milk, and curry powder. Skewer and grill until lightly charred.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "shrimp": "1.5 pounds",
+      "pineapple juice": "1 cup",
+      "coconut milk": "1/2 cup",
+      "curry powder": "1 tablespoon",
+      "skewers": "for grilling"
+    },
+    "tags": ["Coconut", "Seafood"],
+    "averageRating": 5.2,
+    "averageTime": 65,
+    "level": "Intermediate"
+  },
+  {
+    "name": "Butternut Squash and Sage Risotto",
+    "instructions": "Roast butternut squash and add to Arborio rice with sage. Cook with vegetable broth until creamy. Top with Parmesan cheese.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "butternut squash": "1 (peeled and diced)",
+      "sage": "2 tablespoons (chopped)",
+      "Arborio rice": "2 cups",
+      "vegetable broth": "4 cups (heated)",
+      "Parmesan cheese": "1/2 cup (grated)"
+    },
+    "tags": ["Rice", "Arborio", "Broth", "Veggies"],
+    "averageRating": 8.5,
+    "averageTime": 60,
+    "level": "Expert"
+  },
+  {
+    "name": "Mediterranean Chickpea Salad",
+    "instructions": "Combine chickpeas, cherry tomatoes, cucumber, olives, and feta. Toss with a lemon-oregano vinaigrette. Chill before serving.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "chickpeas": "2 cans (drained and rinsed)",
+      "cherry tomatoes": "1 cup (halved)",
+      "cucumber": "1 (diced)",
+      "olives": "1/2 cup (sliced)",
+      "feta cheese": "1/2 cup (crumbled)",
+      "lemon-oregano vinaigrette": "1/4 cup"
+    },
+    "tags": ["Salad"],
+    "averageRating": 5.1,
+    "averageTime": 25,
+    "level": "Beginner"
+  },
+  {
+    "name": "Hawaiian BBQ Chicken Pizza",
+    "instructions": "Spread BBQ sauce on pizza dough. Top with shredded chicken, pineapple, red onions, and mozzarella. Bake until crust is golden and cheese is melted.",
+    "img": "./images/SpicyArrabiataPenne.jpg",
+    "ingredients": {
+      "pizza dough": "1 package",
+      "BBQ sauce": "1/2 cup",
+      "shredded chicken": "2 cups",
+      "pineapple": "1 cup (sliced)",
+      "red onions": "1/2 cup (sliced)",
+      "mozzarella cheese": "2 cups (shredded)"
+    },
+    "tags": ["Pizza", "Pineapple", "BBQ"],
+    "averageRating": 7.8,
+    "averageTime": 60,
+    "level": "Intermediate"
+  }
+]

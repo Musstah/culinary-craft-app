@@ -1,0 +1,26 @@
+{
+  "name": "culinary-craft-app",
+  "version": "1.0.0",
+  "description": "This is app for food lovers",
+  "main": "server.js",
+  "scripts": {
+    "start": "SET NODE_ENV=production && node server",
+    "dev": "nodemon server"
+  },
+  "author": "Dom",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.8",
+    "nodemon": "^3.0.1",
+    "path": "^0.12.7",
+    "slugify": "^1.6.6"
+  }
+}
