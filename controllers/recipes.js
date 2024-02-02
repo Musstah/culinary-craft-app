@@ -6,16 +6,16 @@ const Recipe = require("../models/Recipe");
 // @route   GET /api/v1/recipes
 // @access  Public
 exports.getRecipes = asyncHandler(async (req, res, next) => {
-  let queryStr = JSON.stringify(req.query);
+  // let queryStr = JSON.stringify(req.query);
 
-  queryStr = queryStr
-    .replace(/\b(all|in|regex)\b/g, (match) => `$${match}`)
-    .split(",");
-  console.log(queryStr);
+  // queryStr = queryStr
+  //   .replace(/\b(all|in|regex)\b/g, (match) => `$${match}`)
+  //   .split(",");
+  // console.log(queryStr);
 
-  let query = Recipe.find(JSON.parse(queryStr));
+  // let query = Recipe.find(JSON.parse(queryStr));
 
-  const recipes = await query;
+  const recipes = await Recipe.find();
   res.status(200).json({
     success: true,
     count: recipes.length,
