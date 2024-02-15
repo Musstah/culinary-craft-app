@@ -7,7 +7,8 @@
     "start": "SET NODE_ENV=production && node server",
     "dev": "nodemon server",
     "client": "npm start --prefix frontend",
-    "conc": "concurrently \"npm run dev\" \"npm run client\""
+    "conc": "concurrently \"npm run dev\" \"npm run client\"",
+    "install-deps": "npm install && cd ../frontend && npm install"
   },
   "author": "Dom",
   "license": "MIT",
