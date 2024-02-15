@@ -7,10 +7,9 @@ function Home() {
     const fetchRecipe = async () => {
       try {
         const response = await fetch("/api/v1/recipes");
-        // setData(response.json());
         const json = await response.json();
         setData(json);
-        // console.log(json.data[1].name);
+        // console.log(response);
       } catch (error) {
         console.log(error);
       }
