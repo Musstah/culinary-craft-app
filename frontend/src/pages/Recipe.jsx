@@ -20,7 +20,12 @@ function Recipe() {
     fetchRecipe();
   }, []);
 
-  return <div>Recipe</div>;
+  return (
+    <>
+      <p>Recipe with ID : {recipeData ? recipeId : ""}</p>
+      <p>Name : {recipeData ? recipeData.data.name : ""}</p>
+    </>
+  );
 }
 
 export default Recipe;

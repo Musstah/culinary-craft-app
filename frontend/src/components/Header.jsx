@@ -5,7 +5,7 @@ function Header() {
     <header className="header">
       <div className="logo">
         <Link to="/">Main Page</Link>
-        <Link to="/recipies">Recipies</Link>
+        <Link to="/recipes">Recipies</Link>
       </div>
     </header>
   );
