@@ -22,6 +22,23 @@ function SignUp() {
     }));
   };
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await fetch("/api/v1/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("Success", result);
+        navigate("/sign-in");
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
+  };
+
   return (
     <>
       <div className="page-container">
@@ -29,7 +46,7 @@ function SignUp() {
           <p>Welcome Back!</p>
         </header>
         <main>
-          <form>
+          <form onSubmit={onSubmit}>
             <input
               type="text"
               className="name"
@@ -65,7 +82,7 @@ function SignUp() {
 
             <div className="sign-in-bar">
               <p className="sign-in-text">Sign Up</p>
-              <button></button>
+              <button type="submit">Sign Up Button</button>
             </div>
             <Link to="/sign-in">Sign In</Link>
           </form>

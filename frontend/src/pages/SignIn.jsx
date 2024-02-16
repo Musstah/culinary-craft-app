@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import AuthContext from "../context/AuthContext";
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,6 +12,8 @@ function SignIn() {
   });
 
   const { email, password } = formData;
+
+  const { dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -31,6 +34,8 @@ function SignIn() {
       .then((response) => response.json())
       .then((result) => {
         console.log("Success", result);
+        dispatch({ type: "SET_TOKEN", payload: result.token });
+        navigate("/profile");
       })
       .catch((error) => {
         console.error("Error", error);
