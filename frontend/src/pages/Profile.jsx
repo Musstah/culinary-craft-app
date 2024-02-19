@@ -1,13 +1,17 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Cookies } from "react-cookie";
 import AuthContext from "../context/AuthContext";
 
 function Profile() {
-  const { currentUser, logOutUser } = useContext(AuthContext);
+  const { currentUser, logOutUser, dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate();
-  const { dispatch } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (localStorage.getItem("token") === "") {
+      navigate("/sign-in");
+    }
+  }, [localStorage.getItem("token")]);
 
   const logOut = () => {
     localStorage.removeItem("token");

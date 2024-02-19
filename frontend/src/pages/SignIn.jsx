@@ -1,6 +1,5 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import AuthContext from "../context/AuthContext";
@@ -37,7 +36,6 @@ function SignIn() {
         // console.log("Success", result);
         dispatch({ type: "SET_TOKEN", payload: result.token });
         localStorage.setItem("token", result.token);
-
         navigate("/profile");
       })
       .catch((error) => {
