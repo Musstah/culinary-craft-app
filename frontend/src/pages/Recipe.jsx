@@ -24,6 +24,7 @@ function Recipe() {
     <>
       <p>Recipe with ID : {recipeData ? recipeId : ""}</p>
       <p>Name : {recipeData ? recipeData.data.name : ""}</p>
+      <img src="./_data/images/CreamyGarlicParmesanLinguine.jpg" alt="img" />
     </>
   );
 }
