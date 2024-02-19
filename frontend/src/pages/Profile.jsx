@@ -15,6 +15,7 @@ function Profile() {
 
   const logOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     dispatch({ type: "SET_TOKEN", payload: null });
     logOutUser();
     navigate("/sign-in");
