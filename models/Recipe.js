@@ -51,7 +51,7 @@ const RecipeSchema = new mongoose.Schema({
 // Create slug and img url from the name
 RecipeSchema.pre("save", function (next) {
   this.slug = slugify(this.name, { lower: true });
-  this.img = `./images/${this.name.split(" ").join("")}.img`;
+  this.img = `${this.name.split(" ").join("")}.jpg`;
   next();
 });
 

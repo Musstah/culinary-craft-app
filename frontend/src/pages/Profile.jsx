@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import Spinner from "../components/Spinner";
 
 function Profile() {
   const { currentUser, logOutUser, dispatch } = useContext(AuthContext);
@@ -39,7 +40,7 @@ function Profile() {
           <button onClick={logOut}>LogOut Button</button>
         </>
       ) : (
-        "No User"
+        <Spinner />
       )}
     </>
   );
