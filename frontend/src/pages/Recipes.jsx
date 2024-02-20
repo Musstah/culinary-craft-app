@@ -29,7 +29,7 @@ function Recipies() {
       <h1 className="mb-4 text-4xl font-extrabold leading-none dark:text-white text-center">
         Explore Recipes
       </h1>
-      <div>
+      <div className="max-h-5">
         {data.count > 0
           ? data.data.map((recipe, index) => (
               <Link to={`${recipe._id}`} key={index}>
