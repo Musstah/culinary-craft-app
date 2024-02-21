@@ -13,7 +13,7 @@ function SignIn() {
 
   const { email, password } = formData;
 
-  const { dispatch } = useContext(AuthContext);
+  const { dispatch, fetchCurrentUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -26,21 +26,18 @@ function SignIn() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await fetch("/api/v1/auth/login", {
+    const response = await fetch("/api/v1/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        // console.log("Success", result);
-        dispatch({ type: "SET_TOKEN", payload: result.token });
-        localStorage.setItem("token", result.token);
-        navigate("/profile");
-      })
-      .catch((error) => {
-        console.error("Error", error);
-      });
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      fetchCurrentUser();
+      navigate("/profile");
+    }
   };
 
   return (
