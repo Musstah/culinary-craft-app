@@ -35,13 +35,18 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const logOutUser = () => {
+    fetch("/api/v1/auth/logout");
+    localStorage.setItem("userLogged", "false");
+  };
+
   useEffect(() => {
     fetchCurrentUser();
   }, []);
 
   return (
     <AuthContext.Provider
-      value={{ state, dispatch, currentUser, fetchCurrentUser }}
+      value={{ state, dispatch, currentUser, fetchCurrentUser, logOutUser }}
     >
       {children}
     </AuthContext.Provider>

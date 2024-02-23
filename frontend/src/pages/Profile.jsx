@@ -4,21 +4,22 @@ import AuthContext from "../context/AuthContext";
 import Spinner from "../components/Spinner";
 
 function Profile() {
-  const { currentUser, dispatch } = useContext(AuthContext);
+  const { currentUser, dispatch, logOutUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (currentUser === null) {
+    if (
+      !localStorage.getItem("userLogged") ||
+      localStorage.getItem("userLogged") === "false"
+    ) {
       navigate("/sign-in");
     }
   }, []);
 
   const logOut = () => {
-    // localStorage.removeItem("token");
-    // dispatch({ type: "SET_TOKEN", payload: null });
-    // logOutUser();
-    // navigate("/sign-in");
+    logOutUser();
+    navigate("/sign-in");
   };
 
   return (

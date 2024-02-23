@@ -31,11 +31,11 @@ function SignIn() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-
+    fetchCurrentUser();
     const result = await response.json();
 
     if (response.ok) {
-      fetchCurrentUser();
+      localStorage.setItem("userLogged", "true");
       navigate("/profile");
     }
   };
