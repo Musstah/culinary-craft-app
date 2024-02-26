@@ -42,41 +42,49 @@ function SignIn() {
 
   return (
     <>
-      <div className="page-container">
-        <header>
-          <p>Welcome Back!</p>
-        </header>
-        <main>
+      <div>
+        <header></header>
+        <main className="page-container flex flex-col items-center justify-center">
+          <h2>Welcome Back!</h2>
           <form onSubmit={onSubmit}>
-            <input
-              type="email"
-              className="email"
-              placeholder="Email"
-              id="email"
-              value={email}
-              onChange={onChange}
-            />
-            <div className="password-input-div">
+            <div className="flex flex-row items-center mb-12 mt-4">
               <input
-                type={showPassword ? "text" : "password"}
-                className="password-input"
-                placeholder="Password"
-                id="password"
-                value={password}
+                type="email"
+                className="p-2 border border-gray-300 rounded-md"
+                placeholder="Email"
+                id="email"
+                value={email}
                 onChange={onChange}
               />
-              <FontAwesomeIcon
-                icon={showPassword ? faEye : faEyeSlash}
-                onClick={() => setShowPassword((prevState) => !prevState)}
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className="p-2 border border-gray-300 rounded-md"
+                  placeholder="Password"
+                  id="password"
+                  value={password}
+                  onChange={onChange}
+                />
+                <FontAwesomeIcon
+                  icon={showPassword ? faEye : faEyeSlash}
+                  onClick={() => setShowPassword((prevState) => !prevState)}
+                  className="absolute right-2 top-3 cursor-pointer"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <Link to="/forgot-password">Forgot Password</Link>
             </div>
 
-            <Link to="/forgot-password">Forgot Password</Link>
+            <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col absolute top-60">
+                <button type="submit">Sign In Button</button>
 
-            <div className="sign-in-bar">
-              <button type="submit">Sign In Button</button>
+                <buttorn to="/sign-up" className="my-4">
+                  Sign Up Instead
+                </buttorn>
+              </div>
             </div>
-            <Link to="/sign-up">Sign Up</Link>
           </form>
         </main>
       </div>
