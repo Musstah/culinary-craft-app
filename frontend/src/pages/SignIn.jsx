@@ -42,16 +42,21 @@ function SignIn() {
 
   return (
     <>
-      <div>
+      <div className="">
         <header></header>
         <main>
-          <div className="">
-            <h2 className="">Welcome Back!</h2>
+          <div className="flex flex-col items-center">
+            <h2 className="text-4xl font-bold my-6 text-cyan-700">
+              Welcome Back!
+            </h2>
+            {/* Horizontal Line */}
+            <div className="w-11/12 border-b border-zinc-300"></div>
             <form onSubmit={onSubmit}>
-              <div className="">
+              <div className="flex flex-row pt-6 pb-2 space-x-6">
                 <input
                   type="email"
-                  className=""
+                  className="w-52 border-2 rounded-md p-2 shadow-md focus:outline-none hover:shadow-none 
+                  focus:shadow-none"
                   placeholder="Email"
                   id="email"
                   value={email}
@@ -60,7 +65,8 @@ function SignIn() {
                 <div className="relative">
                   <input
                     type={showPassword ? "text" : "password"}
-                    className=""
+                    className="w-52 border-2 rounded-md p-2 shadow-md focus:outline-none hover:shadow-none
+                    focus:shadow-none"
                     placeholder="Password"
                     id="password"
                     value={password}
@@ -69,36 +75,62 @@ function SignIn() {
                   <FontAwesomeIcon
                     icon={showPassword ? faEye : faEyeSlash}
                     onClick={() => setShowPassword((prevState) => !prevState)}
-                    className=""
+                    className="absolute right-3 top-3"
                   />
                 </div>
               </div>
-              <div className="">
-                <Link to="/forgot-password" className="">
+              <div className="text-center mb-4">
+                <Link
+                  to="/forgot-password"
+                  className="font-thin text-sky-400 opacity-70"
+                >
                   Forgot Password
                 </Link>
               </div>
 
-              <div className="">
-                <button type="submit" className="">
+              <div className="flex flex-col items-center space-y-8 mt-8">
+                <button
+                  type="submit"
+                  className="w-5/6 text-white bg-gradient-to-r from-cyan-400 via-cyan-500 
+                to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 
+                dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 
+                font-medium rounded-lg text-sm px-5 py-3 text-center me-2"
+                >
                   Sign In
                 </button>
 
-                <Link to="/sign-up" className="">
+                <Link
+                  to="/sign-up"
+                  className="w-5/6 text-white bg-gradient-to-r from-teal-400 via-teal-500
+                 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300
+                  dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 
+                  font-medium rounded-lg text-sm px-5 py-3 text-center me-2 mb-8"
+                >
                   Sign Up Instead
                 </Link>
               </div>
             </form>
-            <div className="">
-              <button className="">
-                <img src="/facebook.png" alt="" className="w-9" />
-                <span className="font-thin">Facebook</span>
-              </button>
-              <button className="">
-                <img src="/google.png" alt="" className="w-9" />
-                <span className="font-thin">Google</span>
-              </button>
-            </div>
+          </div>
+          {/* Horizontal Line */}
+          <div className="w-11/12 border-b border-zinc-300 mt-10 mx-auto"></div>
+          <p className="font-thin text-zinc-400 text-center mt-3">
+            or log in with
+          </p>
+          <div className="flex flex-col space-x-0 space-y-6 mt-4 items-center mx-6">
+            <button
+              className="w-10/12 flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm
+                hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <img src="/facebook.png" alt="" className="w-9" />
+              <span className="font-thin">Facebook</span>
+            </button>
+            <button
+              className="w-10/12 flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm
+                hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <img src="/google.png" alt="" className="w-9" />
+              <span className="font-thin">Google</span>
+            </button>
           </div>
         </main>
       </div>
