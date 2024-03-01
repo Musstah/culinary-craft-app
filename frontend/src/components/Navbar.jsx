@@ -12,6 +12,8 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const currentPath = window.location.pathname;
+
   const pathMatchRoute = (route) => {
     if (route === location.pathname) {
       return true;
@@ -43,7 +45,7 @@ function Navbar() {
           </li>
           <li
             className={
-              pathMatchRoute("/recipes")
+              currentPath.startsWith("/recipes")
                 ? "my-3 items-center flex flex-col text-neutral-400"
                 : "my-3 items-center flex flex-col"
             }
@@ -53,7 +55,7 @@ function Navbar() {
             <FontAwesomeIcon
               icon={faBowlFood}
               className={
-                pathMatchRoute("/recipes")
+                currentPath.startsWith("/recipes")
                   ? "text-2xl w-10 text-neutral-400"
                   : "text-2xl w-10"
               }
