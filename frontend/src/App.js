@@ -13,19 +13,17 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <div className="container">
-          {/* <Header /> */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/recipes/:recipeId" element={<Recipe />} />
-            <Route path="/recipes" element={<Recipes />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/sign-up" element={<SignUp />} />
-            <Route path="/forgot-password" element={<SignIn />} />
-          </Routes>
-          <Navbar />
-        </div>
+        {/* <Header /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes/:recipeId" element={<Recipe />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/forgot-password" element={<SignIn />} />
+        </Routes>
+        <Navbar />
       </Router>
     </AuthProvider>
   );

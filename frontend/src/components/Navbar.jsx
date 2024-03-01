@@ -19,14 +19,14 @@ function Navbar() {
   };
 
   return (
-    <footer className="fixed bottom-8 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+    <footer className="fixed bottom-0 left-0 z-50 mx-auto w-full h-20 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
       <nav>
-        <ul className="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
+        <ul className="grid max-w-lg grid-cols-3 mx-auto font-medium justify-center">
           <li
             className={
               pathMatchRoute("/")
-                ? "m-5 mb-15 items-center flex flex-col text-neutral-400"
-                : "m-5 mb-15 items-center flex flex-col"
+                ? "my-3 items-center flex flex-col text-neutral-400"
+                : "my-3 items-center flex flex-col"
             }
             onClick={() => navigate("/")}
           >
@@ -44,8 +44,8 @@ function Navbar() {
           <li
             className={
               pathMatchRoute("/recipes")
-                ? "m-5 mb-15 items-center flex flex-col text-neutral-400"
-                : "m-5 mb-15 items-center flex flex-col"
+                ? "my-3 items-center flex flex-col text-neutral-400"
+                : "my-3 items-center flex flex-col"
             }
             onClick={() => navigate("/recipes")}
           >
@@ -65,8 +65,8 @@ function Navbar() {
               pathMatchRoute("/profile") ||
               pathMatchRoute("/sign-in") ||
               pathMatchRoute("/sign-up")
-                ? "m-5 mb-15 items-center flex flex-col text-neutral-400"
-                : "m-5 mb-15 items-center flex flex-col"
+                ? "my-3 items-center flex flex-col text-neutral-400"
+                : "my-3 items-center flex flex-col"
             }
             onClick={() => navigate("/profile")}
           >
