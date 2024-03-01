@@ -69,7 +69,7 @@ function Recipe() {
             </div>
             <div className="flex flex-col">
               <FontAwesomeIcon className="mb-1" icon={faClock} />
-              <p>{`${recipeData.data.averageTime} min`}</p>
+              <p>{`${recipeData.data.averageTime} mins`}</p>
             </div>
           </div>
           <div className="flex flex-col px-6 space-y-1 items-start">
