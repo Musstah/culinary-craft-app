@@ -1,26 +1,14 @@
-import { useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
+import RecipeContext from "../context/Recipes/RecipeContext";
 import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Recipies() {
-  const [data, setData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const { data, isLoading, fetchRecipies } = useContext(RecipeContext);
 
   useEffect(() => {
-    const fetchRecipies = async () => {
-      try {
-        const response = await fetch("/api/v1/recipes");
-        const json = await response.json();
-        setData(json);
-        setIsLoading(false);
-        // console.log(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
     fetchRecipies();
   }, []);
 

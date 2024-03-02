@@ -13,7 +13,7 @@ function SignIn() {
 
   const { email, password } = formData;
 
-  const { dispatch, fetchCurrentUser } = useContext(AuthContext);
+  const { fetchCurrentUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
