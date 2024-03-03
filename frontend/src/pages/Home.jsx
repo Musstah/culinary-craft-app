@@ -1,54 +1,66 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import RecipeContext from "../context/Recipes/RecipeContext";
 import Spinner from "../components/Spinner";
+import TagItem from "../components/TagItem";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
-  const { data, isLoading, fetchRecipies } = useContext(RecipeContext);
-  const [randomArr, setRandomArr] = useState([]);
-
-  const getRandomArray = (max) => {
-    const randomArr = [];
-    while (randomArr.length < 8) {
-      const tempVal = Math.floor(Math.random() * max);
-      if (!randomArr.includes(tempVal)) {
-        randomArr.push(tempVal);
-      }
-    }
-    return randomArr;
-  };
+  const { data, randomArr, isLoading, fetchRecipies } =
+    useContext(RecipeContext);
 
   useEffect(() => {
     fetchRecipies();
-    setRandomArr(getRandomArray(data.count));
   }, []);
 
   return isLoading ? (
     <Spinner />
   ) : (
     <>
-      <h1 className="mb-4 text-4xl font-bold my-6 text-cyan-700 text-center">
+      <h1 className="mb-8 text-4xl font-bold my-6 text-cyan-700 text-center">
         Dom's Cullinary Craft
       </h1>
+      {/* Input and SVG Container */}
+      <div className="relative flex border-b mb-4">
+        <input
+          type="text"
+          className="mx-2 px-2 pb-1 w-full h-10 bg-stone-100 rounded-md focus:shadow-md border-none md:w-80 
+          placeholder:font-thin focus:outline-none"
+          placeholder="Search"
+        />
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute w-8 text-gray-300 duration-200 hover:scale-110 right-4 bottom-1"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="10" cy="10" r="7" />
+            <line x1="21" y1="21" x2="15" y2="15" />
+          </svg>
+        </button>
+      </div>
       <div className="flex overflow-x-auto whitespace-nowrap space-x-2">
-        {/* Tag Item 1 */}
-        <div
-          className="relative flex flex-col justify-end flex-grow-0 flex-shrink-0 flex-basis-0 w-24 h-24 rounded-2xl 
-        bg-gradient-to-br from-stone-50 via-stone-200 to-stone-100 my-6 mx-2 shadow-lg
-        text-center"
-        >
-          <img
-            src="/pizzaTag.png"
-            alt="img"
-            className="absolute md:hidden object-cover rotate-[200deg] rounded-xl w-4/6 h-4/6 -right-1 -top-1"
-          />
-          <strong className="self-bottom pb-2">Pizza</strong>
-        </div>
+        {/* Tag Items */}
+        <TagItem name="pizza" deg="200" />
+        <TagItem name="cheese" />
+        <TagItem name="pasta" />
+        <TagItem name="meat" />
+        <TagItem name="fish" />
+        <TagItem name="veggies" />
+        <TagItem name="fruit" />
+        <TagItem name="salad" />
       </div>
 
-      {/* ------------------------------------------------------- */}
+      <h5 className="text-3xl font-bold mt-12 mb-8 text-cyan-700 pl-3">
+        Recommended
+      </h5>
 
       <div className="flex overflow-x-auto whitespace-nowrap">
         {randomArr.map((val, index) => (

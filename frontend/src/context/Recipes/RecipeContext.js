@@ -6,6 +6,7 @@ const RecipeContext = createContext();
 export const RecipeProvider = ({ children }) => {
   const initialState = {
     data: {},
+    randomArr: [],
     isLoading: true,
   };
 
@@ -15,6 +16,7 @@ export const RecipeProvider = ({ children }) => {
     try {
       const response = await fetch("/api/v1/recipes");
       const json = await response.json();
+
       dispatch({
         type: "SET_RECIPES",
         payload: json,
@@ -31,6 +33,7 @@ export const RecipeProvider = ({ children }) => {
     <RecipeContext.Provider
       value={{
         data: state.data,
+        randomArr: state.randomArr,
         isLoading: state.isLoading,
         fetchRecipies,
       }}
