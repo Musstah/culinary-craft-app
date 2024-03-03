@@ -48,7 +48,7 @@ function Home() {
       </div>
       <div className="flex overflow-x-auto whitespace-nowrap space-x-2">
         {/* Tag Items */}
-        <TagItem name="Pizza" deg="200" />
+        <TagItem name="pizza" deg="200" />
         <TagItem name="cheese" />
         <TagItem name="pasta" />
         <TagItem name="meat" />
@@ -62,11 +62,11 @@ function Home() {
         Recommended
       </h5>
 
-      <div className="flex overflow-x-auto whitespace-nowrap">
+      <div className="flex overflow-x-auto whitespace-nowrap md:flex-row md:flex-wrap">
         {randomArr.map((val, index) => (
           <div key={index}>
             {data.data[val] ? (
-              <div className="group relative overflow-hidden px-2 w-60 mb-4 md:px-8">
+              <div className="group relative overflow-hidden px-2 w-60 mb-4 md:flex md:flex-row md:flex-wrap md:px-8 md:w-96 md:h-80 md:mb-40">
                 <Link
                   to={`recipes/${data.data[val]._id}`}
                   key={index}
@@ -76,7 +76,7 @@ function Home() {
                   <img
                     src={`/${data.data[val].img}`}
                     alt="img"
-                    className="hidden h-1/2 w-full object-cover md:block duration-200 group-hover:scale-110"
+                    className="hidden w-full h-full object-cover md:block duration-200 group-hover:scale-110"
                   />
 
                   {/* Mobile Image */}
