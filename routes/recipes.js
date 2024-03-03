@@ -1,6 +1,7 @@
 const express = require("express");
 const {
   getRecipes,
+  getRecipesByTag,
   getSingleRecipe,
   addRecipe,
   updateRecipe,
@@ -18,7 +19,7 @@ router.use("/:recipeId/ratings", ratingRouter);
 
 const { protect, authorize } = require("../middleware/auth");
 
-router.route("/").get(getRecipes).post(protect, addRecipe);
+router.route("/").get(getRecipes, getRecipesByTag).post(protect, addRecipe);
 
 router
   .route("/:id")

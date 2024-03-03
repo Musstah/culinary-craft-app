@@ -11,10 +11,9 @@ export const RecipeProvider = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(recipeReducer, initialState);
-
-  const fetchRecipies = async () => {
+  const fetchRecipies = async (url = "/api/v1/recipes") => {
     try {
-      const response = await fetch("/api/v1/recipes");
+      const response = await fetch(url);
       const json = await response.json();
 
       dispatch({

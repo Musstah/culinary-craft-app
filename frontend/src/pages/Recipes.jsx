@@ -9,7 +9,9 @@ function Recipies() {
   const { data, isLoading, fetchRecipies } = useContext(RecipeContext);
 
   useEffect(() => {
-    fetchRecipies();
+    if (Object.keys(data).length === 0) {
+      fetchRecipies();
+    }
   }, []);
 
   return isLoading ? (
@@ -19,6 +21,31 @@ function Recipies() {
       <h2 className="mb-4 text-4xl font-bold my-6 text-cyan-700 text-center">
         Explore Recipes
       </h2>
+      {/* Input and SVG Container */}
+      <div className="relative flex border-b mb-4">
+        <input
+          type="text"
+          className="mx-2 px-2 pb-1 w-11/12 h-10 bg-stone-100 rounded-md focus:shadow-md border-none md:w-80 
+          placeholder:font-thin focus:outline-none"
+          placeholder="Search"
+        />
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute w-8 text-gray-300 duration-200 hover:scale-110 right-7 bottom-1"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="10" cy="10" r="7" />
+            <line x1="21" y1="21" x2="15" y2="15" />
+          </svg>
+        </button>
+      </div>
       <div className="flex flex-row flex-wrap self-end justify-start h-full p-2 mb-24 text-gray-900">
         {data.count > 0 ? (
           data.data.map((recipe, index) => (

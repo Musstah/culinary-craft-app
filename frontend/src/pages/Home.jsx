@@ -48,7 +48,7 @@ function Home() {
       </div>
       <div className="flex overflow-x-auto whitespace-nowrap space-x-2">
         {/* Tag Items */}
-        <TagItem name="pizza" deg="200" />
+        <TagItem name="Pizza" deg="200" />
         <TagItem name="cheese" />
         <TagItem name="pasta" />
         <TagItem name="meat" />

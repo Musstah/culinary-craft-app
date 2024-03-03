@@ -6,21 +6,48 @@ const Recipe = require("../models/Recipe");
 // @route   GET /api/v1/recipes
 // @access  Public
 exports.getRecipes = asyncHandler(async (req, res, next) => {
-  // let queryStr = JSON.stringify(req.query);
+  if (req.query.tags) {
+    const tags = req.query.tags;
+    const recipes = await Recipe.find({ tags: { $all: tags } }).exec();
 
-  // queryStr = queryStr
-  //   .replace(/\b(all|in|regex)\b/g, (match) => `$${match}`)
-  //   .split(",");
-  // console.log(queryStr);
+    if (!recipes) {
+      return next(
+        new ErrorResponse(`Recipes not found with tags of ${tags}`, 404)
+      );
+    }
 
-  // let query = Recipe.find(JSON.parse(queryStr));
+    res.status(200).json({
+      success: true,
+      count: recipes.length,
+      data: recipes,
+    });
+  } else if (req.query.name) {
+    const nameQuery = req.query.name;
+    console.log(nameQuery);
+    const recipes = await Recipe.find({ name: nameQuery }).exec();
 
-  const recipes = await Recipe.find();
-  res.status(200).json({
-    success: true,
-    count: recipes.length,
-    data: recipes,
-  });
+    if (!recipes) {
+      return next(
+        new ErrorResponse(
+          `Recipes not found with name of  of ${nameQuery}`,
+          404
+        )
+      );
+    }
+
+    res.status(200).json({
+      success: true,
+      count: recipes.length,
+      data: recipes,
+    });
+  } else {
+    const recipes = await Recipe.find();
+    res.status(200).json({
+      success: true,
+      count: recipes.length,
+      data: recipes,
+    });
+  }
 });
 
 // @desc    Get single recipe
@@ -38,6 +65,25 @@ exports.getSingleRecipe = asyncHandler(async (req, res, next) => {
   res.status(200).json({
     success: true,
     data: recipe,
+  });
+});
+
+// @desc    Get recipes by tags
+// @route   GET /api/v1/recipes
+// @access  Public
+exports.getRecipesByTag = asyncHandler(async (req, res, next) => {
+  const tags = req.query.tags;
+  const recipes = await Recipe.find({ tags: { $all: tags } }).exec();
+
+  if (!recipes) {
+    return next(
+      new ErrorResponse(`Recipes not found with tags of ${req.query.tags}`, 404)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    data: recipes,
   });
 });
 
