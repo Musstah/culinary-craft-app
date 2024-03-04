@@ -44,3 +44,11 @@ code {
       rgba(217, 220, 240, 1) 100%
     );
 }
+
+.navigate-btn {
+  @apply my-3 items-center flex flex-col md:cursor-pointer;
+}
+
+.navigate-icon {
+  @apply text-2xl w-10 md:hidden;
+}
