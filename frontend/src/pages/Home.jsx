@@ -19,7 +19,7 @@ function Home() {
   ) : (
     <>
       <h1 className="mb-8 text-4xl font-bold my-6 text-cyan-700 text-center md:text-left md:ml-16">
-        Dom's Cullinary Craft
+        Cullinary Craft
       </h1>
       {/* Input and SVG Container */}
       <div className="relative md:hidden flex border-b mb-4">
@@ -62,47 +62,35 @@ function Home() {
         Recommended
       </h5>
 
-      <div className="flex overflow-x-auto whitespace-nowrap md:flex-row md:flex-wrap md:space-x-48">
+      <div className="flex overflow-x-auto whitespace-nowrap md:flex-row md:flex-wrap md:ml-28">
         {randomArr.map((val, index) => (
           <div key={index}>
             {data.data[val] ? (
               <div
-                className={`group relative px-2 w-60 mb-4 md:flex md:flex-row md:flex-wrap md:px-10 md:pt-5 md:w-full md:h-full md:mb-20  ${
-                  index === 0 ? "md:ml-48" : ""
-                } ${index > 5 ? "md:hidden" : ""}`}
+                className={`group relative px-2 w-60 mb-4 md:flex md:flex-row md:flex-wrap md:px-20 md:pt-5 md:w-full md:h-full md:mb-20  ${
+                  index > 5 ? "md:hidden" : ""
+                }`}
               >
                 <Link
                   to={`recipes/${data.data[val]._id}`}
                   key={index}
                   className=""
                 >
-                  {/* Item Label */}
-                  <div
-                    className={`hidden md:block absolute top-8 bottom-0 right-12
-                    bg-gradient-to-br from-sky-50 via-sky-100 to-sky-200 my-6 mx-2 md:rounded-r-full md:w-96 md:h-44 -z-10 ${
-                      index === 0 ? "md:right-60" : ""
-                    }`}
-                  >
-                    {/* Info Container */}
-                    <div className="flex flex-col w-11/12  ml-4 mt-2 mb-4 text-left">
-                      {/* Item text */}
-                      <h5 className="hidden md:block text-wrap text-cyan-700 font-bold pr-48">
-                        {data.data[val].name}
-                      </h5>
-                      <div className="flex flex-row items-center space-x-3">
-                        <FontAwesomeIcon className="" icon={faClock} />
-                        <strong className="pr-3">{`${data.data[val].averageTime} mins`}</strong>
-                      </div>
+                  <div className="hidden md:flex flex-col w-96 h-full items-center rounded-2xl bg-sky-200">
+                    {/* Desktop Image */}
+                    <img
+                      src={`/${data.data[val].img}`}
+                      alt="img"
+                      className="hidden object-cover rounded-2xl md:block pt-3 md:w-11/12 md:h-48 duration-200 group-hover:scale-105"
+                    />
+                    <h5 className="text-wrap text-cyan-700 font-bold self-start pl-4 pt-2">
+                      {data.data[val].name}
+                    </h5>
+                    <div className="flex flex-row items-center space-x-3 self-start pl-4 pt-2">
+                      <FontAwesomeIcon className="" icon={faClock} />
+                      <strong className="pr-3">{`${data.data[val].averageTime} mins`}</strong>
                     </div>
                   </div>
-
-                  {/* Desktop Image */}
-
-                  <img
-                    src={`/${data.data[val].img}`}
-                    alt="img"
-                    className="hidden object-cover md:block md:w-60 md:h-60 md:rounded-full duration-200 group-hover:scale-110"
-                  />
 
                   {/* Mobile Image */}
                   <img
@@ -113,10 +101,10 @@ function Home() {
 
                   {/* Item Gradient */}
                   <div
-                    className={`hidden md:block absolute top-5 bottom-0 right-10
-            bg-gradient-to-b from-transparent to-gray-900 md:rounded-full md:w-60 md:h-60 md:opacity-10
-            group-hover:from-gray-50 group-hover:to-white group-hover:scale-110
-            group-hover:opacity-70 ${index === 0 ? "md:right-[232px]" : ""}`}
+                    className={`hidden md:block absolute top-[29px] bottom-0 right-[95px] rounded-2xl
+            bg-gradient-to-b from-transparent to-gray-900  w-[355px] h-[185px] md:opacity-10
+            group-hover:from-gray-50 group-hover:to-white group-hover:scale-105
+            group-hover:opacity-70`}
                   ></div>
                 </Link>
               </div>
