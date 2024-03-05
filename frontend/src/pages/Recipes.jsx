@@ -58,7 +58,7 @@ function Recipies() {
         <TagItem name="fruit" />
         <TagItem name="salad" />
       </div>
-      <div className="flex flex-row flex-wrap self-end justify-start p-2 mb-4 md:mt-4 text-gray-900 overflow-y-auto max-h-[600px] md:max-h-[1080px]">
+      <div className="flex flex-row flex-wrap self-end justify-start p-2 mb-4 md:mt-4 text-gray-900 overflow-y-auto max-h-[600px] md:max-h-[690px]">
         {data.count > 0 ? (
           data.data.map((recipe, index) => (
             // item
@@ -71,33 +71,33 @@ function Recipies() {
                 <div className="hidden md:flex flex-col w-96 h-full items-center rounded-2xl bg-slate-50">
                   {/* Desktop Image */}
                   <img
-                    src={`/${recipe.img}`}
+                    src={`/imagesSmall/${recipe.img}`}
                     alt="img"
                     className="hidden object-cover rounded-2xl md:block pt-3 md:w-11/12 md:h-48 duration-200 group-hover:scale-105"
                   />
                   <h5 className="text-wrap text-xl text-stone-600 font-bold self-start pl-4 pt-2 group-hover:text-black">
                     {recipe.name}
                   </h5>
-                  <div className="flex flex-row w-full justify-between pl-4 pr-2">
+                  <div className="flex flex-row w-full justify-between pl-4 pr-2 pb-8">
                     <div className="flex flex-row items-center space-x-3 pt-2">
                       <FontAwesomeIcon className="" icon={faClock} />
                       <strong className="pr-3 text-stone-600 group-hover:text-black">{`${recipe.averageTime} mins`}</strong>
                     </div>
                     <div className="flex flex-row items-center space-x-3 pt-2">
                       <FontAwesomeIcon className="" icon={faStar} />
-                      <strong className="pr-3 text-stone-600 group-hover:text-black">{`${recipe.averageRating} mins`}</strong>
+                      <strong className="pr-3 text-stone-600 group-hover:text-black">{`${recipe.averageRating}`}</strong>
                     </div>
                   </div>
                 </div>
 
                 {/* Mobile Image */}
                 <img
-                  src={`/${recipe.img}`}
+                  src={`/imagesSmall/${recipe.img}`}
                   alt="img"
                   className="md:hidden w-40 h-40 rounded-xl object-cover"
                 />
                 {/* Info Container */}
-                <div className="flex flex-row w-11/12 mt-2 mb-4 justify-between">
+                <div className="flex md:hidden flex-row w-11/12 mt-2 mb-4 justify-between">
                   <div
                     className="flex flex-row items-center space-x-2 bg-slate-50 px-3 
                 py-0.5 rounded-xl bg-opacity-70"

@@ -79,7 +79,7 @@ function Home() {
                   <div className="hidden md:flex flex-col w-96 h-full items-center rounded-2xl bg-slate-50">
                     {/* Desktop Image */}
                     <img
-                      src={`/${data.data[val].img}`}
+                      src={`/imagesSmall/${data.data[val].img}`}
                       alt="img"
                       className="hidden object-cover rounded-2xl md:block pt-3 md:w-11/12 md:h-48 duration-200 group-hover:scale-105"
                     />
@@ -93,14 +93,14 @@ function Home() {
                       </div>
                       <div className="flex flex-row items-center space-x-3 pt-2">
                         <FontAwesomeIcon className="" icon={faStar} />
-                        <strong className="pr-3 text-stone-600 group-hover:text-black">{`${data.data[val].averageRating} mins`}</strong>
+                        <strong className="pr-3 text-stone-600 group-hover:text-black">{`${data.data[val].averageRating}`}</strong>
                       </div>
                     </div>
                   </div>
 
                   {/* Mobile Image */}
                   <img
-                    src={`/${data.data[val].img}`}
+                    src={`/imagesSmall/${data.data[val].img}`}
                     alt="img"
                     className="md:hidden object-cover h-80 rounded-xl"
                   />
