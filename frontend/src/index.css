@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 html {
-  background: rgb(224, 234, 252) no-repeat center center fixed
+  /* background: rgb(224, 234, 252) no-repeat center center fixed
     linear-gradient(
       141deg,
       rgba(160, 234, 252, 0.2) 0%,
       rgba(217, 220, 240, 1) 100%
-    );
+    ); */
+  background-image: url("../../_data/images/backgroundFoodAround.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  height: 100%;
 }
 
 body {

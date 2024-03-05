@@ -4,7 +4,7 @@ import Spinner from "../components/Spinner";
 import TagItem from "../components/TagItem";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faClock } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const { data, randomArr, isLoading, fetchRecipies } =
@@ -18,7 +18,7 @@ function Home() {
     <Spinner />
   ) : (
     <>
-      <h1 className="mb-8 text-4xl font-bold my-6 text-cyan-700 text-center md:text-left md:ml-16">
+      <h1 className="mb-8 text-4xl font-bold my-24 md:my-6text-gray-900 text-center md:text-left md:mt-10 md:ml-16">
         Cullinary Craft
       </h1>
       {/* Input and SVG Container */}
@@ -58,7 +58,7 @@ function Home() {
         <TagItem name="salad" />
       </div>
 
-      <h5 className="text-3xl font-bold mt-12 mb-8 text-cyan-700 pl-3 md:ml-16 md:mb-0">
+      <h5 className="text-3xl font-bold text-gray-900 mt-12 mb-8 pl-3 md:ml-16 md:mt-24 md:mb-0">
         Recommended
       </h5>
 
@@ -67,7 +67,7 @@ function Home() {
           <div key={index}>
             {data.data[val] ? (
               <div
-                className={`group relative px-2 w-60 mb-4 md:flex md:flex-row md:flex-wrap md:px-20 md:pt-5 md:w-full md:h-full md:mb-20  ${
+                className={`group relative px-2 w-60 mb-4 md:flex md:flex-row md:flex-wrap md:px-20 md:pt-5 md:w-full md:h-full md:mb-8  ${
                   index > 5 ? "md:hidden" : ""
                 }`}
               >
@@ -76,19 +76,25 @@ function Home() {
                   key={index}
                   className=""
                 >
-                  <div className="hidden md:flex flex-col w-96 h-full items-center rounded-2xl bg-sky-200">
+                  <div className="hidden md:flex flex-col w-96 h-full items-center rounded-2xl bg-slate-50">
                     {/* Desktop Image */}
                     <img
                       src={`/${data.data[val].img}`}
                       alt="img"
                       className="hidden object-cover rounded-2xl md:block pt-3 md:w-11/12 md:h-48 duration-200 group-hover:scale-105"
                     />
-                    <h5 className="text-wrap text-cyan-700 font-bold self-start pl-4 pt-2">
+                    <h5 className="text-wrap text-xl text-stone-600 font-bold self-start pl-4 pt-2 group-hover:text-black">
                       {data.data[val].name}
                     </h5>
-                    <div className="flex flex-row items-center space-x-3 self-start pl-4 pt-2">
-                      <FontAwesomeIcon className="" icon={faClock} />
-                      <strong className="pr-3">{`${data.data[val].averageTime} mins`}</strong>
+                    <div className="flex flex-row w-full justify-between pl-4 pr-2">
+                      <div className="flex flex-row items-center space-x-3 pt-2">
+                        <FontAwesomeIcon className="" icon={faClock} />
+                        <strong className="pr-3 text-stone-600 group-hover:text-black">{`${data.data[val].averageTime} mins`}</strong>
+                      </div>
+                      <div className="flex flex-row items-center space-x-3 pt-2">
+                        <FontAwesomeIcon className="" icon={faStar} />
+                        <strong className="pr-3 text-stone-600 group-hover:text-black">{`${data.data[val].averageRating} mins`}</strong>
+                      </div>
                     </div>
                   </div>
 
@@ -114,6 +120,8 @@ function Home() {
           </div>
         ))}
       </div>
+      {/* Div to add some space */}
+      <div className="h-8"></div>
     </>
   );
 }

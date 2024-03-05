@@ -43,7 +43,9 @@ function SignUp() {
     <div>
       <div className="flex flex-col items-center">
         <header>
-          <p className="text-4xl font-bold my-6 text-cyan-700">Register</p>
+          <p className="text-4xl font-bold my-24 md:my-6 text-gray-900 md:mt-20">
+            Register
+          </p>
         </header>
         <main>
           {/* Horizontal Line */}

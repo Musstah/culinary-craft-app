@@ -16,7 +16,7 @@ function TagItem(props) {
   return (
     <button
       className="relative flex flex-col justify-end flex-grow-0 flex-shrink-0 flex-basis-0 w-24 h-24 rounded-2xl 
-    bg-gradient-to-br from-stone-50 via-stone-200 to-stone-100 my-6 mx-2 shadow-md
+    bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 my-6 mx-2 shadow-md
     text-center duration-200 hover:scale-110 hover:shadow-lg"
       onClick={onClick}
     >

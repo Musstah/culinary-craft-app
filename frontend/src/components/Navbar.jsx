@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <footer
       className="fixed bottom-0 right-0 z-50 mx-auto w-full h-20 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600
-    md:top-0 md:mx-0 md:w-1/2 md:bg-transparent md:mt-2 md:pr-6"
+    md:top-6 md:mx-0 md:w-1/2 md:bg-transparent md:mt-2 md:pr-6"
     >
       <nav>
         <ul className="grid max-w-lg grid-cols-3 md:grid-cols-4 mx-auto font-medium justify-center">

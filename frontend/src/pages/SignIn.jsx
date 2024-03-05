@@ -44,13 +44,13 @@ function SignIn() {
     <div className="">
       <div className="flex flex-col items-center">
         <header>
-          <h2 className="text-4xl font-bold my-6 text-cyan-700">
+          <h2 className="text-4xl font-bold my-24 md:my-6 text-gray-900 md:mt-20">
             Welcome Back!
           </h2>
         </header>
         <main>
           {/* Horizontal Line */}
-          <div className="w-11/12 border-b border-zinc-400 opacity-50"></div>
+          <div className="w-11/12 border-b border-zinc-300"></div>
           <form onSubmit={onSubmit}>
             <div className="flex flex-row pt-6 pb-2 space-x-6">
               <input
