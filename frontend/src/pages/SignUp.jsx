@@ -117,7 +117,7 @@ function SignUp() {
             </div>
           </form>
           {/* Horizontal Line */}
-          <div className="w-11/12 border-b border-zinc-400 opacity-50 mt-40 mx-auto"></div>
+          <div className="w-11/12 border-b border-zinc-400 opacity-50 mt-12 md:mt-40 mx-auto"></div>
           <p className="font-thin text-zinc-600 text-center mt-3 mb-8">
             or sign up with
           </p>
