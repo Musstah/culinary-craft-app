@@ -40,15 +40,6 @@ code {
   focus:shadow-none;
 }
 
-.round-div {
-  background: rgb(224, 234, 252)
-    linear-gradient(
-      141deg,
-      rgba(160, 234, 252, 0.2) 0%,
-      rgba(217, 220, 240, 1) 100%
-    );
-}
-
 .navigate-btn {
   @apply my-3 items-center flex flex-col md:cursor-pointer;
 }

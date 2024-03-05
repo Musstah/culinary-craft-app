@@ -31,15 +31,15 @@ function Recipe() {
 
   return recipeData ? (
     <>
-      <div className="relative flex flex-col items-center">
+      <div className="flex flex-col items-center mb-2">
         <img
           src={`/${recipeData.data.img}`}
           alt="img"
-          className="w-full h-96 object-cover"
+          className="w-full h-96 object-cover md:w-1/2 md:mt-24 md:rounded-3xl"
         />
 
-        <div className="round-div absolute top-80 flex flex-col pt-4 h-full space-y-3 rounded-t-[70px]">
-          <h2 className="text-2xl font-bold mt-2 px-8 text-cyan-700 text-center">
+        <div className="flex flex-col pt-4 h-full md:w-1/2 space-y-3">
+          <h2 className="text-2xl font-bold px-8 text-gray-900 text-center">
             {recipeData.data.name}
           </h2>
           <div className="flex flex-row justify-between items-center px-6">
@@ -80,14 +80,16 @@ function Recipe() {
                 </p>
               )
             )}
+            {/* Horizontal Line */}
+            <div className="w-11/12 border-b border-zinc-400 opacity-50 mx-auto"></div>
+            <p className="font-thin text-slate-700 text-center overflow-y-auto max-h-[180px]">
+              {recipeData.data.instructions}
+            </p>
           </div>
-          {/* Horizontal Line */}
-          <div className="w-11/12 border-b border-zinc-400 opacity-50 mx-auto"></div>
-          <p className="font-thin text-slate-700 text-center px-6">
-            {recipeData.data.instructions}
-          </p>
         </div>
       </div>
+      {/* Div to add some space */}
+      <div className="h-8"></div>
     </>
   ) : (
     ""
