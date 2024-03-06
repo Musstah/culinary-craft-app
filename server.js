@@ -4,6 +4,9 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
+const rateLimit = require("express-rate-limit");
+const hpp = require("hpp");
+const cors = require("cors");
 const errorHandler = require("./middleware/error");
 const connectDB = require("./config/db");
 
@@ -26,6 +29,20 @@ app.use(express.json());
 
 // Cookie parser
 app.use(cookieParser());
+
+// Rate Limitng
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 10 minds
+  max: 2000,
+});
+
+app.use(limiter);
+
+// Prevent http param pollution
+app.use(hpp());
+
+// Enable CORS
+// app.use(cors);
 
 // Set static foler
 app.use(express.static(path.join(__dirname, "public")));

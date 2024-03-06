@@ -6,6 +6,7 @@ const Recipe = require("../models/Recipe");
 // @route   GET /api/v1/recipes
 // @access  Public
 exports.getRecipes = asyncHandler(async (req, res, next) => {
+  console.log(req.query);
   if (req.query.tags) {
     const tags = req.query.tags;
     const recipes = await Recipe.find({ tags: { $all: tags } }).exec();
