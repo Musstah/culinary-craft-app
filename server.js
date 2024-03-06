@@ -42,7 +42,7 @@ app.use(limiter);
 app.use(hpp());
 
 // Enable CORS
-// app.use(cors);
+app.use(cors());
 
 // Set static foler
 app.use(express.static(path.join(__dirname, "public")));
