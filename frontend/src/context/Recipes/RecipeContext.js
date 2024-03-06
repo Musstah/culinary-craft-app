@@ -27,6 +27,23 @@ export const RecipeProvider = ({ children }) => {
       console.log(error);
     }
   };
+  const fetchRecipiesByTag = async (tag) => {
+    const url = "/api/v1/recipes";
+    try {
+      const response = await fetch(`${url}?tags=${tag}`);
+      const json = await response.json();
+
+      dispatch({
+        type: "SET_RECIPE",
+        payload: json,
+      });
+      //   setData(json);
+      //   setIsLoading(false);
+      // console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <RecipeContext.Provider
@@ -35,6 +52,7 @@ export const RecipeProvider = ({ children }) => {
         randomArr: state.randomArr,
         isLoading: state.isLoading,
         fetchRecipies,
+        fetchRecipiesByTag,
       }}
     >
       {children}

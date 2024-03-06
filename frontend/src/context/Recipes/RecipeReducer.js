@@ -18,6 +18,13 @@ const recipeReducer = (state, action) => {
         randomArr: getRandomArray(action.payload.count),
         isLoading: false,
       };
+    case "SET_RECIPE":
+      return {
+        ...state,
+        data: action.payload,
+        randomArr: [],
+        isLoading: false,
+      };
     default:
       return state;
   }
