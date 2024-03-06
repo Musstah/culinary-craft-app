@@ -37,8 +37,13 @@ function Recipe() {
           alt="img"
           className="w-full h-96 object-cover md:w-1/2 md:mt-24 md:rounded-3xl"
         />
+        {/* <img
+          src="/backgroundFoodAround.png"
+          alt="img"
+          className="absolute top-80 w-full h-full object-cover md:w-1/2 md:mt-24 md:rounded-3xl rounded-t-[30px]"
+        /> */}
 
-        <div className="flex flex-col pt-4 h-full md:w-1/2 space-y-3">
+        <div className="flex flex-col h-full grow pt-4 md:w-1/2 space-y-3">
           <h2 className="text-2xl font-bold px-8 text-gray-900 text-center">
             {recipeData.data.name}
           </h2>
