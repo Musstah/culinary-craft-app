@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBowlFood } from "@fortawesome/free-solid-svg-icons";
 
 function Profile() {
-  const { currentUser, dispatch, logOutUser } = useContext(AuthContext);
+  const { currentUser, logOutUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 

@@ -35,14 +35,14 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logOutUser = () => {
-    fetch("/api/v1/auth/logout");
+  const logOutUser = async () => {
+    await fetch("/api/v1/auth/logout");
     localStorage.setItem("userLogged", "false");
   };
 
-  useEffect(() => {
-    fetchCurrentUser();
-  }, []);
+  // useEffect(() => {
+  //   fetchCurrentUser();
+  // }, [localStorage.setItem("userLogged", "false")]);
 
   return (
     <AuthContext.Provider

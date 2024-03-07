@@ -25,7 +25,9 @@ exports.getRecipes = asyncHandler(async (req, res, next) => {
   } else if (req.query.name) {
     const nameQuery = req.query.name;
     console.log(nameQuery);
-    const recipes = await Recipe.find({ name: nameQuery }).exec();
+    const recipes = await Recipe.find({
+      name: { $regex: nameQuery },
+    }).exec();
 
     if (!recipes) {
       return next(

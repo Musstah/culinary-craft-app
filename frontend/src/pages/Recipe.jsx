@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faClock } from "@fortawesome/free-solid-svg-icons";
+import AuthContext from "../context/AuthContext";
 
 function Recipe() {
   const { recipeId } = useParams();
   const [recipeData, setRecipeData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -47,6 +49,24 @@ function Recipe() {
           <h2 className="text-2xl font-bold px-8 text-gray-900 text-center">
             {recipeData.data.name}
           </h2>
+          {/* <button
+            type="button"
+            class={`${
+              currentUser.data !== null && currentUser.data.role !== "admin"
+                ? "hidden"
+                : ""
+            } text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br 
+            focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg 
+            text-sm px-5 py-2.5 text-center me-2 mb-2`}
+            onClick={() => {
+              console.log(
+                `User: ${currentUser.data.name} is deleting: ${recipeData.data.name}`
+              );
+            }}
+          >
+            Delete
+          </button> */}
+
           <div className="flex flex-row justify-between items-center px-6">
             <div className="flex flex-col items-center">
               {recipeData.data.level === "Expert" ? (

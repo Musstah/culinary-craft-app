@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import RecipeContext from "../context/Recipes/RecipeContext";
-import { useNavigate, useSearchParams, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function TagItem(props) {
-  const { fetchRecipiesByTag } = useContext(RecipeContext);
+  const { fetchRecipiesByQuery } = useContext(RecipeContext);
   // const [searchParams, setSearchParams] = useSearchParams();
   const rotate = `rotate-[${props.deg}deg]`;
 
@@ -11,7 +11,8 @@ function TagItem(props) {
 
   const onCLick = () => {
     const tag = props.name[0].toUpperCase() + props.name.slice(1);
-    fetchRecipiesByTag(tag);
+    const query = `tags=${tag}`;
+    fetchRecipiesByQuery(query);
     navigate("/recipes");
   };
 

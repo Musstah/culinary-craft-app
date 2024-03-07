@@ -18,7 +18,7 @@ const recipeReducer = (state, action) => {
         randomArr: getRandomArray(action.payload.count),
         isLoading: false,
       };
-    case "SET_RECIPE":
+    case "SET_RECIPES_BY_QUERY":
       return {
         ...state,
         data: action.payload,
