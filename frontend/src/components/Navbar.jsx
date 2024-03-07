@@ -37,7 +37,7 @@ function Navbar() {
       <nav>
         <ul
           className={`grid max-w-lg grid-cols-3 ${
-            currentPath.startsWith("/recipes") ? "md:grid-cols-4" : ""
+            currentPath.endsWith("/recipes") ? "md:grid-cols-4" : ""
           } mx-auto font-medium justify-center`}
         >
           <li
@@ -104,7 +104,7 @@ function Navbar() {
           <li>
             <div
               className={`relative hidden ${
-                currentPath.startsWith("/recipes") ? "md:flex" : ""
+                currentPath.endsWith("/recipes") ? "md:flex" : ""
               }  border-b mb-4 md:mt-1.5`}
             >
               <input
