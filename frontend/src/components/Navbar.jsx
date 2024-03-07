@@ -1,4 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import RecipeContext from "../context/Recipes/RecipeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -12,6 +14,8 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const { fetchRecipiesByQuery } = useContext(RecipeContext);
+
   const currentPath = window.location.pathname;
 
   const pathMatchRoute = (route) => {
@@ -20,13 +24,22 @@ function Navbar() {
     }
   };
 
+  const onChange = (value) => {
+    const query = `name=${value}`;
+    fetchRecipiesByQuery(query);
+  };
+
   return (
     <footer
       className="fixed bottom-0 right-0 z-50 mx-auto w-full h-20 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600
     md:top-6 md:mx-0 md:w-1/2 md:bg-transparent md:mt-2 md:pr-6"
     >
       <nav>
-        <ul className="grid max-w-lg grid-cols-3 md:grid-cols-4 mx-auto font-medium justify-center">
+        <ul
+          className={`grid max-w-lg grid-cols-3 ${
+            currentPath.startsWith("/recipes") ? "md:grid-cols-4" : ""
+          } mx-auto font-medium justify-center`}
+        >
           <li
             className={
               pathMatchRoute("/")
@@ -89,12 +102,19 @@ function Navbar() {
             <p>Profile</p>
           </li>
           <li>
-            <div className="relative hidden md:flex border-b mb-4 md:mt-1.5">
+            <div
+              className={`relative hidden ${
+                currentPath.startsWith("/recipes") ? "md:flex" : ""
+              }  border-b mb-4 md:mt-1.5`}
+            >
               <input
                 type="text"
                 className="mx-2 px-2 pb-1 w-full h-10 bg-stone-100 rounded-md focus:shadow-md border-none md:w-80 
           placeholder:font-thin focus:outline-none"
                 placeholder="Search"
+                onChange={(e) => {
+                  onChange(e.target.value);
+                }}
               />
               <button>
                 <svg

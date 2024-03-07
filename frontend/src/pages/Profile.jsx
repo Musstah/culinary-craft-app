@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBowlFood } from "@fortawesome/free-solid-svg-icons";
 
 function Profile() {
-  const { currentUser, logOutUser } = useContext(AuthContext);
+  const { currentUser, logOutUser, fetchCurrentUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    fetchCurrentUser();
     if (
       !localStorage.getItem("userLogged") ||
       localStorage.getItem("userLogged") === "false"
