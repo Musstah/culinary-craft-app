@@ -36,8 +36,21 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logOutUser = async () => {
-    await fetch("/api/v1/auth/logout");
-    localStorage.setItem("userLogged", "false");
+    try {
+      const response = await fetch("/api/v1/auth/logout", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        localStorage.setItem("userLogged", "false");
+        fetchCurrentUser();
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   // useEffect(() => {
