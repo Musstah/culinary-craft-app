@@ -19,7 +19,9 @@ function Recipe() {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await fetch(`/api/v1/recipes/${recipeId}`);
+        const response = await fetch(
+          `https://culinaryapp.onrender.com/api/v1/recipes/${recipeId}`
+        );
         const json = await response.json();
         setRecipeData(json);
         setIsLoading(false);

@@ -26,7 +26,7 @@ function TagItem(props) {
       }}
     >
       <img
-        src={`/imagesSmall/${props.name}Tag.png`}
+        src={`https://culinaryapp.onrender.com/imagesSmall/${props.name}Tag.png`}
         alt="img"
         className={`absolute object-cover ${rotate} rounded-xl w-4/6 h-4/6 -right-1 -top-1 `}
       />

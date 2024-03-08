@@ -100,7 +100,7 @@ function Home() {
 
                   {/* Mobile Image */}
                   <img
-                    src={`/imagesSmall/${data.data[val].img}`}
+                    src={`https://culinaryapp.onrender.com/imagesSmall/${data.data[val].img}`}
                     alt="img"
                     className="md:hidden object-cover h-80 rounded-xl"
                   />
