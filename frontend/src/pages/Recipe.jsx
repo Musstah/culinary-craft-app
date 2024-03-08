@@ -42,7 +42,7 @@ function Recipe() {
     <>
       <div className="relative flex flex-col items-center mb-2">
         <img
-          src={`/${recipeData.data.img}`}
+          src={`https://culinaryapp.onrender.com/${recipeData.data.img}`}
           alt="img"
           className="w-full h-96 object-cover md:w-1/2 md:mt-24 md:rounded-3xl"
         />
