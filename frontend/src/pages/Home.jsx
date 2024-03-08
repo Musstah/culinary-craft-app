@@ -79,7 +79,7 @@ function Home() {
                   <div className="hidden md:flex flex-col w-96 h-full items-center rounded-2xl bg-slate-50">
                     {/* Desktop Image */}
                     <img
-                      src={`/imagesSmall/${data.data[val].img}`}
+                      src={`https://culinaryapp.onrender.com/imagesSmall/${data.data[val].img}`}
                       alt="img"
                       className="hidden object-cover rounded-2xl md:block pt-3 md:w-11/12 md:h-48 duration-200 group-hover:scale-105"
                     />
