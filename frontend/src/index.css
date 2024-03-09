@@ -9,24 +9,27 @@ html {
       rgba(160, 234, 252, 0.2) 0%,
       rgba(217, 220, 240, 1) 100%
     ); */
-  background-image: url("../../_data/images/backgroundFoodAround.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: fit;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url("../../_data/images/backgroundFoodAroundv2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 
   /* background-image: url("C:\Users\IT\Git_reps\culinary-craft-app\_data\images\bgv1.jpg"); */
 }
@@ -46,4 +49,11 @@ code {
 
 .navigate-icon {
   @apply text-2xl w-10 md:hidden;
+}
+
+@media (max-width: 600px) {
+  body {
+    max-height: 600px;
+    background-repeat: repeat;
+  }
 }

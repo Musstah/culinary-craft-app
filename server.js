@@ -42,7 +42,11 @@ app.use(limiter);
 app.use(hpp());
 
 // Enable CORS
-app.use(cors());
+const corsOptions = {
+  origin: "http://https://culinary-craft-app.vercel.app/",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 
 // Set static foler
 app.use(express.static(path.join(__dirname, "public")));
