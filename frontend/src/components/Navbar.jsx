@@ -86,7 +86,7 @@ function Navbar() {
                 ? "navigate-btn text-neutral-400"
                 : "navigate-btn"
             }
-            onClick={() => navigate("/profile")}
+            onClick={() => navigate("/sign-in")}
           >
             {" "}
             <FontAwesomeIcon
