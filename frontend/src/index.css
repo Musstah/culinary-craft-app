@@ -23,7 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("../../_data/images/backgroundFoodAroundv2.png");
+  background-image: url("../../_data/images/backgroundFoodAroundv3.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -54,6 +54,7 @@ code {
 @media (max-width: 600px) {
   body {
     max-height: 600px;
-    background-repeat: repeat;
+    /* background-repeat: repeat; */
+    background-size: fit;
   }
 }

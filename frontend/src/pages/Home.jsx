@@ -18,7 +18,7 @@ function Home() {
     <Spinner />
   ) : (
     <>
-      <h1 className="mb-8 text-4xl font-bold my-24 md:my-6text-gray-900 text-center md:text-left md:mt-10 md:ml-16">
+      <h1 className="mb-8 text-4xl font-bold my-12 md:my-6text-gray-900 text-center md:text-left md:mt-10 md:ml-16">
         Cullinary Craft
       </h1>
       {/* Input and SVG Container */}
@@ -62,7 +62,7 @@ function Home() {
         Recommended
       </h5>
 
-      <div className="flex overflow-x-auto whitespace-nowrap md:flex-row md:flex-wrap md:ml-28">
+      <div className="flex overflow-x-auto whitespace-nowrap mb-16 md:flex-row md:flex-wrap md:ml-28">
         {randomArr.map((val, index) => (
           <div key={index}>
             {data.data[val] ? (
