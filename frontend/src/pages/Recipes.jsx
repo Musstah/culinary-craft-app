@@ -19,7 +19,7 @@ function Recipies() {
     <Spinner />
   ) : (
     <>
-      <h1 className="mb-8 text-4xl font-bold my-12 md:my-6 text-black text-center md:text-left md:mt-10 md:ml-16">
+      <h1 className="mb-8 text-4xl font-bold my-12 md:my-6 text-black md:text-stone-300 text-center md:text-left md:mt-10 md:ml-16">
         Explore Recipes
       </h1>
       {/* Input and SVG Container */}

@@ -18,7 +18,7 @@ function Home() {
     <Spinner />
   ) : (
     <>
-      <h1 className="mb-8 text-4xl font-bold my-12 md:my-6 text-black text-center md:text-left md:mt-10 md:ml-16">
+      <h1 className="mb-8 text-4xl font-bold my-12 md:my-6 text-black md:text-stone-300 text-center md:text-left md:mt-10 md:ml-16">
         Cullinary Craft
       </h1>
       {/* Input and SVG Container */}
@@ -58,7 +58,7 @@ function Home() {
         <TagItem name="salad" />
       </div>
 
-      <h5 className="text-3xl font-bold text-black mt-12 mb-8 pl-3 md:ml-16 md:mt-24 md:mb-0">
+      <h5 className="text-3xl font-bold text-black md:text-stone-300 mt-12 mb-8 pl-3 md:ml-16 md:mt-24 md:mb-0">
         Recommended
       </h5>
 

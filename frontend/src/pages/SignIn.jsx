@@ -44,7 +44,7 @@ function SignIn() {
   };
 
   return (
-    <div className="">
+    <>
       <div className="flex flex-col items-center">
         <header>
           <h2 className="text-4xl font-bold my-12 md:my-6 text-black md:mt-20">
@@ -81,10 +81,7 @@ function SignIn() {
               </div>
             </div>
             <div className="text-center mb-4">
-              <Link
-                to="/forgot-password"
-                className="font-thin text-sky-500 opacity-70"
-              >
+              <Link to="/forgot-password" className="font-thin text-sky-500">
                 Forgot Password
               </Link>
             </div>
@@ -112,8 +109,8 @@ function SignIn() {
             </div>
           </form>
           {/* Horizontal Line */}
-          <div className="w-11/12 border-b border-zinc-400 opacity-50 mt-12 md:mt-40 mx-auto"></div>
-          <p className="font-thin text-zinc-600 text-center mt-3 mb-8">
+          <div className="w-11/12 border-b border-zinc-400 opacity-50 mt-12 md:mt-20 mx-auto"></div>
+          <p className="font-thin text-black text-center mt-6 mb-2">
             or log in with
           </p>
           <div className="flex flex-col space-x-0 space-y-6 mt-4 items-center mx-6">
@@ -142,7 +139,9 @@ function SignIn() {
           </div>
         </main>
       </div>
-    </div>
+      {/* Div to add some space */}
+      <div className="h-24 md:hidden"></div>
+    </>
   );
 }
 
