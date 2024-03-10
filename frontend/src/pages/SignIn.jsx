@@ -55,7 +55,7 @@ function SignIn() {
           {/* Horizontal Line */}
           <div className="w-11/12 border-b border-zinc-300"></div>
           <form onSubmit={onSubmit}>
-            <div className="flex flex-row pt-6 pb-2 space-x-3">
+            <div className="flex flex-row pt-6 pb-2 space-x-2">
               <input
                 type="email"
                 className="form-input"

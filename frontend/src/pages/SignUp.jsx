@@ -51,7 +51,7 @@ function SignUp() {
           {/* Horizontal Line */}
           <div className="w-11/12 border-b border-zinc-300"></div>
           <form onSubmit={onSubmit}>
-            <div className="flex flex-row pt-6 pb-2 space-x-3">
+            <div className="flex flex-row pt-6 pb-2 space-x-2">
               <input
                 type="text"
                 className="form-input"
@@ -81,7 +81,7 @@ function SignUp() {
               <FontAwesomeIcon
                 icon={showPassword ? faEye : faEyeSlash}
                 onClick={() => setShowPassword((prevState) => !prevState)}
-                className="absolute right-60 top-3"
+                className="absolute right-48 top-3"
               />
             </div>
 

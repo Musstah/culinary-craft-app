@@ -88,8 +88,8 @@ function Recipe() {
           className="absolute top-80 w-full h-full object-cover md:w-1/2 md:mt-24 md:rounded-3xl rounded-t-[30px]"
         /> */}
 
-        <div className="flex flex-col h-full grow pt-4 md:w-1/2 space-y-3">
-          <h2 className="text-2xl font-bold px-8 text-gray-900 text-center">
+        <div className="flex flex-col h-full grow pt-4 md:w-1/2 space-y-3 bg-slate-300 bg-opacity-40">
+          <h2 className="text-2xl font-bold px-8 text-black text-center">
             {recipeData.data.name}
           </h2>
           <div className="flex flex-row justify-between items-center px-6">
@@ -125,7 +125,7 @@ function Recipe() {
           <div className="flex flex-col px-6 space-y-1 items-start">
             {Object.entries(recipeData.data.ingredients).map(
               ([ingredient, value], index) => (
-                <p className="text-slate-600" key={index}>
+                <p className="text-black" key={index}>
                   <strong>{ingredient}:</strong> {value}
                 </p>
               )
