@@ -123,14 +123,22 @@ function SignUp() {
               className="w-full flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm
                 hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5"
             >
-              <img src="/facebook.png" alt="" className="w-9" />
+              <img
+                src="https://culinaryapp.onrender.com/facebook.png"
+                alt=""
+                className="w-9"
+              />
               <span className="font-thin">Facebook</span>
             </button>
             <button
               className="w-full flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm
                 hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5"
             >
-              <img src="/google.png" alt="" className="w-9" />
+              <img
+                src="https://culinaryapp.onrender.com/google.png"
+                alt=""
+                className="w-9"
+              />
               <span className="font-thin">Google</span>
             </button>
           </div>
