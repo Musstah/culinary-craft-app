@@ -43,7 +43,7 @@ function SignUp() {
     <div>
       <div className="flex flex-col items-center">
         <header>
-          <p className="text-4xl font-bold my-12 md:my-6 text-gray-900 md:mt-20">
+          <p className="text-4xl font-bold my-12 md:my-6 text-black md:mt-20">
             Register
           </p>
         </header>
