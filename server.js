@@ -42,8 +42,12 @@ app.use(limiter);
 app.use(hpp());
 
 // Enable CORS
-
-app.use(cors({ origin: "https://culinary-craft-app.vercel.app" }));
+app.use(
+  cors({
+    origin: "https://culinary-craft-app.vercel.app",
+    credentials: true,
+  })
+);
 
 // Set static foler
 app.use(express.static(path.join(__dirname, "public")));
