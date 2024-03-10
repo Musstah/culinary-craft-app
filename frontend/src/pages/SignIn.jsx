@@ -26,6 +26,7 @@ function SignIn() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log(JSON.stringify(formData));
     const response = await fetch(
       "https://culinaryapp.onrender.com/api/v1/auth/login",
       {
@@ -34,6 +35,7 @@ function SignIn() {
         body: JSON.stringify(formData),
       }
     );
+
     fetchCurrentUser();
     const result = await response.json();
 
