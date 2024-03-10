@@ -50,11 +50,3 @@ code {
 .navigate-icon {
   @apply text-2xl w-10 md:hidden;
 }
-
-@media (max-width: 600px) {
-  body {
-    max-height: 600px;
-    /* background-repeat: repeat; */
-    background-size: fit;
-  }
-}

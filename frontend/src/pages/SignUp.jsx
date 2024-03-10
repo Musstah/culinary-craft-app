@@ -51,7 +51,7 @@ function SignUp() {
           {/* Horizontal Line */}
           <div className="w-11/12 border-b border-zinc-300"></div>
           <form onSubmit={onSubmit}>
-            <div className="flex flex-row pt-6 pb-2 space-x-6">
+            <div className="flex flex-row pt-6 pb-2 space-x-3">
               <input
                 type="text"
                 className="form-input"
