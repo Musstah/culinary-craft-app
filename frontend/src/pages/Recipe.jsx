@@ -44,7 +44,7 @@ function Recipe() {
         <img
           src={`https://culinaryapp.onrender.com/${recipeData.data.img}`}
           alt="img"
-          className="w-full h-96 object-cover md:w-1/2 md:mt-24 md:rounded-3xl"
+          className="w-full h-64 object-cover md:w-1/2 md:h-96 md:mt-24 md:rounded-3xl"
         />
         <div className="absolute flex flex-row space-x-2 top-2 right-2 md:top-28 md:right-1/4 md:mr-4">
           <button
