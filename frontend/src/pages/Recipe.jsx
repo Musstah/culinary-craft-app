@@ -137,7 +137,7 @@ function Recipe() {
             </p>
           </div>
           {/* Div to add some space */}
-          <div className="h-8 mb-24"></div>
+          <div className="h-8 mb-24 md:mb-2"></div>
         </div>
       </div>
     </>
