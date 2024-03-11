@@ -136,10 +136,10 @@ function Recipe() {
               {recipeData.data.instructions}
             </p>
           </div>
+          {/* Div to add some space */}
+          <div className="h-8"></div>
         </div>
       </div>
-      {/* Div to add some space */}
-      <div className="h-8"></div>
     </>
   ) : (
     ""

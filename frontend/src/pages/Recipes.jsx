@@ -58,7 +58,7 @@ function Recipies() {
         <TagItem name="fruit" />
         <TagItem name="salad" />
       </div>
-      <div className="flex flex-row flex-wrap self-end justify-start p-2 mb-4 md:mt-4 text-gray-900 overflow-y-auto max-h-[600px] md:max-h-[690px]">
+      <div className="flex flex-row flex-wrap self-end justify-start bg-slate-200 bg-opacity-50 p-2 mb-4 md:mt-4 text-gray-900 overflow-y-auto max-h-[600px] md:max-h-[690px]">
         {data.count > 0 ? (
           data.data.map((recipe, index) => (
             // item
