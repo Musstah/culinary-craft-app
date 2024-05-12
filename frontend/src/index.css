@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --cerulean: #0081a7;
+  --verdigris: #00afb9;
+  --light-yellow: #fdfcdc;
+  --light-orange: #fed9b7;
+  --bittersweet: #f07167;
+}
+
 html {
   /* background: rgb(224, 234, 252) no-repeat center center fixed
     linear-gradient(
@@ -23,16 +31,44 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("../../_data/images/backgroundFoodAroundv3.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-
-  /* background-image: url("C:\Users\IT\Git_reps\culinary-craft-app\_data\images\bgv1.jpg"); */
+  /* background: var(--light-yellow); */
 }
+
+.header {
+  background: url("../../_data/images/platebackground.jpg") no-repeat center
+    center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Gradient for background below */
+
+/* .header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.header h1,
+p {
+  z-index: 10;
+} */
+
+h1,
+h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.social a {
+  @apply text-5xl hover:text-[#00afb9];
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -44,7 +80,7 @@ code {
 }
 
 .navigate-btn {
-  @apply my-3 items-center flex flex-col md:cursor-pointer;
+  @apply my-3 items-center flex flex-col md:cursor-pointer md:text-xl hover:text-[#00afb9];
 }
 
 .navigate-icon {

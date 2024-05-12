@@ -11,9 +11,8 @@ export const RecipeProvider = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(recipeReducer, initialState);
-  const fetchRecipies = async (
-    url = "https://culinaryapp.onrender.com/api/v1/recipes"
-  ) => {
+
+  const fetchRecipies = async (url = "/api/v1/recipes") => {
     try {
       const response = await fetch(url);
       const json = await response.json();
@@ -30,7 +29,7 @@ export const RecipeProvider = ({ children }) => {
     }
   };
   const fetchRecipiesByQuery = async (query) => {
-    const url = "https://culinaryapp.onrender.com/api/v1/recipes";
+    const url = "/api/v1/recipes";
     try {
       const response = await fetch(`${url}?${query}`);
       const json = await response.json();

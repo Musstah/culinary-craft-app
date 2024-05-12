@@ -18,16 +18,13 @@ export const AuthProvider = ({ children }) => {
   const fetchCurrentUser = async () => {
     setcurrentUser(null);
     try {
-      const response = await fetch(
-        "https://culinaryapp.onrender.com/api/v1/auth/me",
-        {
-          method: "GET",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch("/api/v1/auth/me", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       if (response.ok) {
         const json = await response.json();
         setcurrentUser(json);
@@ -40,16 +37,13 @@ export const AuthProvider = ({ children }) => {
 
   const logOutUser = async () => {
     try {
-      const response = await fetch(
-        "https://culinaryapp.onrender.com/api/v1/auth/logout",
-        {
-          method: "GET",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch("/api/v1/auth/logout", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       if (response.ok) {
         localStorage.setItem("userLogged", "false");
         fetchCurrentUser();

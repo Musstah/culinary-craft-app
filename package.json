@@ -13,6 +13,9 @@
   "author": "Dom",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",

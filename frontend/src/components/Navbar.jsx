@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import RecipeContext from "../context/Recipes/RecipeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,6 +18,21 @@ function Navbar() {
 
   const currentPath = window.location.pathname;
 
+  // User Scroll For Navbar
+  function userScroll() {
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        navbar.classList.add("bg-[#e5e5e5]");
+        navbar.classList.add("bg-opacity-70");
+      } else {
+        navbar.classList.remove("bg-[#e5e5e5]");
+        navbar.classList.remove("bg-opacity-70");
+      }
+    });
+  }
+
   const pathMatchRoute = (route) => {
     if (route === location.pathname) {
       return true;
@@ -29,21 +44,25 @@ function Navbar() {
     fetchRecipiesByQuery(query);
   };
 
+  useEffect(() => {
+    userScroll();
+  }, []);
+
   return (
     <footer
-      className="fixed bottom-0 right-0 z-50 mx-auto w-full h-20 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600
-    md:top-6 md:mx-0 md:w-1/2 md:bg-transparent md:mt-2 md:pr-6"
+      className="navbar transition-all duration-500 fixed bottom-0 right-0 z-50 mx-auto w-full h-20
+    md:mx-0 md:top-0 md:right-0"
     >
-      <nav>
+      <nav className="flex justify-end md:mt-2">
         <ul
-          className={`grid max-w-lg grid-cols-3 ${
+          className={`grid max-w-lg gap-12 grid-cols-3 md:mr-28 ${
             currentPath.endsWith("/recipes") ? "md:grid-cols-4" : ""
-          } mx-auto font-medium justify-center`}
+          } font-medium justify-center`}
         >
           <li
             className={
               pathMatchRoute("/")
-                ? "navigate-btn text-neutral-400"
+                ? "navigate-btn text-[#0081a7]"
                 : "navigate-btn"
             }
             onClick={() => navigate("/")}
@@ -53,7 +72,7 @@ function Navbar() {
               icon={faHouse}
               className={
                 pathMatchRoute("/")
-                  ? "navigate-icon text-neutral-400"
+                  ? "navigate-icon text-[#0081a7]"
                   : "navigate-icon"
               }
             />
@@ -62,7 +81,7 @@ function Navbar() {
           <li
             className={
               currentPath.startsWith("/recipes")
-                ? "navigate-btn text-neutral-400"
+                ? "navigate-btn text-[#0081a7]"
                 : "navigate-btn"
             }
             onClick={() => navigate("/recipes")}
