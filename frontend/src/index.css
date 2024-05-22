@@ -8,6 +8,10 @@
   --light-yellow: #fdfcdc;
   --light-orange: #fed9b7;
   --bittersweet: #f07167;
+  --isabelline: #edede9;
+  --timberwolf: #d6ccc2;
+  --linen: #f5ebe0;
+  --champagne-pink: #e3d5ca;
 }
 
 html {
@@ -31,7 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* background: var(--light-yellow); */
+  background: var(--isabelline);
 }
 
 .header {
@@ -58,10 +62,15 @@ p {
   z-index: 10;
 } */
 
-h1,
-h5 {
+h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+  font-style: normal;
+}
+
+h5 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
   font-style: normal;
 }
 

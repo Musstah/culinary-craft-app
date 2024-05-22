@@ -24,7 +24,7 @@ function SignUp() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await fetch("https://culinaryapp.onrender.com/api/v1/auth/register", {
+    await fetch("/api/v1/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

@@ -23,12 +23,12 @@ function Navbar() {
     const navbar = document.querySelector(".navbar");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        navbar.classList.add("bg-[#e5e5e5]");
-        navbar.classList.add("bg-opacity-70");
+      if (window.scrollY > 850) {
+        navbar.classList.add("bg-[#d6ccc2]");
+        navbar.classList.add("bg-opacity-80");
       } else {
-        navbar.classList.remove("bg-[#e5e5e5]");
-        navbar.classList.remove("bg-opacity-70");
+        navbar.classList.remove("bg-[#d6ccc2]");
+        navbar.classList.remove("bg-opacity-80");
       }
     });
   }

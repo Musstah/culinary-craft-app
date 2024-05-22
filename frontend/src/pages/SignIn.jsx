@@ -27,14 +27,11 @@ function SignIn() {
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(JSON.stringify(formData));
-    const response = await fetch(
-      "https://culinaryapp.onrender.com/api/v1/auth/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      }
-    );
+    const response = await fetch("/api/v1/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
     fetchCurrentUser();
     const result = await response.json();

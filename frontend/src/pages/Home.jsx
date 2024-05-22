@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import RecipeContext from "../context/Recipes/RecipeContext";
 import Spinner from "../components/Spinner";
 import TagItem from "../components/TagItem";
@@ -17,6 +17,8 @@ function Home() {
   const { data, randomArr, isLoading, fetchRecipies } =
     useContext(RecipeContext);
 
+  const [highestRated, setHighestRated] = useState({});
+
   function runTypingEffect() {
     const text = "Lose Your Calories With Me...";
     const typingElement = document.querySelector(".typing-text");
@@ -33,12 +35,27 @@ function Home() {
     }
   }
 
+  function findHighestRated(data) {
+    let highestRating = 0;
+    let highestRatingIndex = 0;
+    data.data.map((row, index) => {
+      if (row["averageRating"] > highestRating) {
+        highestRating = row["averageRating"];
+        highestRatingIndex = index;
+      }
+    });
+    // console.log(highestRating);
+    // console.log(highestRatingIndex);
+    setHighestRated(data.data[highestRatingIndex]);
+  }
+
   useEffect(() => {
     fetchRecipies();
   }, []);
 
   useEffect(() => {
     if (!isLoading) {
+      findHighestRated(data);
       document.querySelector(".typing-text").textContent = "";
       runTypingEffect();
     }
@@ -99,8 +116,8 @@ function Home() {
         <Spinner />
       ) : (
         <section className="main-page-recipes-section">
-          <div className="flex overflow-x-auto whitespace-nowrap space-x-2 md:space-x-6 md:ml-16">
-            {/* Tag Items */}
+          {/* <div className="flex overflow-x-auto whitespace-nowrap space-x-2 md:space-x-6 md:ml-16">
+            
             <TagItem name="pizza" deg="200" />
             <TagItem name="cheese" />
             <TagItem name="pasta" />
@@ -109,13 +126,21 @@ function Home() {
             <TagItem name="veggies" />
             <TagItem name="fruit" />
             <TagItem name="salad" />
+          </div> */}
+
+          <div className="flex justify-between mb-12">
+            <h5 className="text-6xl mt-12 mb-8 pl-3 md:ml-44 md:mt-24 md:mb-0">
+              Recommended
+            </h5>
+            <a
+              href="/recipes"
+              className="text-2xl mt-12 mb-8 pl-3 md:mr-64 md:mt-24 md:mb-0 hover:text-[#00afb9]"
+            >
+              View all recipes
+            </a>
           </div>
 
-          <h5 className="text-3xl font-bold text-[#00afb9] mt-12 mb-8 pl-3 md:ml-16 md:mt-24 md:mb-0">
-            Recommended
-          </h5>
-
-          <div className="flex overflow-x-auto whitespace-nowrap mb-16 md:flex-row md:flex-wrap md:ml-28">
+          <div className="flex whitespace-nowrap mb-16 md:flex-row md:flex-wrap md:ml-28">
             {randomArr.map((val, index) => (
               <div key={index}>
                 {data.data[val] ? (
@@ -129,23 +154,26 @@ function Home() {
                       key={index}
                       className=""
                     >
-                      <div className="hidden md:flex flex-col w-96 h-full items-center rounded-2xl bg-slate-50">
+                      <div className="hidden md:flex flex-col w-96 h-full items-center rounded-2xl bg-white">
                         {/* Desktop Image */}
                         <img
-                          src={`https://culinaryapp.onrender.com/imagesSmall/${data.data[val].img}`}
+                          src={`/imagesSmall/${data.data[val].img}`}
                           alt="img"
                           className="hidden object-cover rounded-2xl md:block pt-3 md:w-11/12 md:h-48 duration-200 group-hover:scale-105"
                         />
-                        <h5 className="text-wrap text-xl text-stone-600 font-bold self-start pl-4 pt-2 group-hover:text-black">
+                        <h4 className="text-wrap text-xl text-stone-600 font-bold self-start pl-4 pt-2 group-hover:text-black">
                           {data.data[val].name}
-                        </h5>
+                        </h4>
                         <div className="flex flex-row w-full justify-between pl-4 pr-2">
                           <div className="flex flex-row items-center space-x-3 pt-2">
                             <FontAwesomeIcon className="" icon={faClock} />
                             <strong className="pr-3 text-stone-600 group-hover:text-black">{`${data.data[val].averageTime} mins`}</strong>
                           </div>
                           <div className="flex flex-row items-center space-x-3 pt-2">
-                            <FontAwesomeIcon className="" icon={faStar} />
+                            <FontAwesomeIcon
+                              className="text-amber-300"
+                              icon={faStar}
+                            />
                             <strong className="pr-3 text-stone-600 group-hover:text-black">{`${data.data[val].averageRating}`}</strong>
                           </div>
                         </div>
@@ -153,7 +181,7 @@ function Home() {
 
                       {/* Mobile Image */}
                       <img
-                        src={`https://culinaryapp.onrender.com/imagesSmall/${data.data[val].img}`}
+                        src={`/imagesSmall/${data.data[val].img}`}
                         alt="img"
                         className="md:hidden object-cover h-80 rounded-xl"
                       />
@@ -173,10 +201,31 @@ function Home() {
               </div>
             ))}
           </div>
-          {/* Div to add some space */}
-          <div className="h-8"></div>
         </section>
       )}
+      <section className="highest-rated-section mb-20">
+        <a
+          href={`recipes/${highestRated["_id"]}`}
+          className="group flex md:flex-row justify-center items-center space-x-20"
+        >
+          <div className="flex flex-col max-w-md group-hover:text-stone-400">
+            <h5 className="text-6xl mt-12 pl-3 md:mt-24">Highest rated!</h5>
+            <div className="flex flex-row text-wrap items-center space-x-3 pt-2  md:pt-8">
+              <FontAwesomeIcon className="text-amber-300 h-8" icon={faStar} />
+              <strong className="pr-3">{highestRated["averageRating"]}</strong>
+            </div>
+            <h5 className="text-4xl my-4 pl-3 ">{highestRated["name"]}</h5>
+            <p className="">{highestRated["instructions"]}</p>
+          </div>
+          <div>
+            <img
+              className="md:w-72 md:h-72 rounded-full"
+              src={highestRated["img"]}
+              alt=""
+            />
+          </div>
+        </a>
+      </section>
     </>
   );
 }

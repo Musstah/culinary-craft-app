@@ -19,9 +19,7 @@ function Recipe() {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await fetch(
-          `https://culinaryapp.onrender.com/api/v1/recipes/${recipeId}`
-        );
+        const response = await fetch(`/api/v1/recipes/${recipeId}`);
         const json = await response.json();
         setRecipeData(json);
         setIsLoading(false);
@@ -42,7 +40,7 @@ function Recipe() {
     <>
       <div className="relative flex flex-col items-center mb-2">
         <img
-          src={`https://culinaryapp.onrender.com/${recipeData.data.img}`}
+          src={`/${recipeData.data.img}`}
           alt="img"
           className="w-full h-64 object-cover md:w-1/2 md:h-96 md:mt-24 md:rounded-3xl"
         />
