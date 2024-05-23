@@ -91,21 +91,21 @@ function Recipe() {
             {recipeData.data.name}
           </h2>
           <div className="flex flex-row justify-between items-center px-6">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col  items-center">
               {recipeData.data.level === "Expert" ? (
                 <div className="flex flex-row mb-1">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
+                  <FontAwesomeIcon className="text-amber-300" icon={faStar} />
+                  <FontAwesomeIcon className="text-amber-300" icon={faStar} />
+                  <FontAwesomeIcon className="text-amber-300" icon={faStar} />
                 </div>
               ) : recipeData.data.level === "Intermediate" ? (
                 <div className="flex flex-row mb-1">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
+                  <FontAwesomeIcon className="text-amber-300" icon={faStar} />
+                  <FontAwesomeIcon className="text-amber-300" icon={faStar} />
                 </div>
               ) : (
                 <div className="flex flex-row mb-1">
-                  <FontAwesomeIcon icon={faStar} />
+                  <FontAwesomeIcon className="text-amber-300" icon={faStar} />
                 </div>
               )}
 

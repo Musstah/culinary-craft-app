@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import RecipeContext from "../context/Recipes/RecipeContext";
 import Spinner from "../components/Spinner";
-import TagItem from "../components/TagItem";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faClock } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +15,8 @@ import {
 function Home() {
   const { data, randomArr, isLoading, fetchRecipies } =
     useContext(RecipeContext);
+
+  const hasRunOnce = useRef(false);
 
   const [highestRated, setHighestRated] = useState({});
 
@@ -50,21 +51,28 @@ function Home() {
   }
 
   useEffect(() => {
-    fetchRecipies();
+    if (!hasRunOnce.current) {
+      fetchRecipies();
+
+      const typingTextElement = document.querySelector(".typing-text");
+      if (typingTextElement) {
+        typingTextElement.textContent = "";
+        runTypingEffect();
+      }
+      hasRunOnce.current = true;
+    }
   }, []);
 
   useEffect(() => {
     if (!isLoading) {
       findHighestRated(data);
-      document.querySelector(".typing-text").textContent = "";
-      runTypingEffect();
     }
   }, [isLoading]);
 
   return (
     <>
       <header className="header relative h-[100vh] flex flex-col justify-center gap-4 pl-4 xl:pl-[11rem] 2xl:pl-[22rem]">
-        <h1 className="text-5xl xl:text-7xl text-[#00afb9]">Dom's Cullinary</h1>
+        <h1 className="text-5xl xl:text-6xl text-[#00afb9]">Dom's Cullinary</h1>
         <p className="typing-text text-3xl xl:text-4xl font-bold"></p>
 
         {/* Input and SVG Container */}
@@ -116,18 +124,6 @@ function Home() {
         <Spinner />
       ) : (
         <section className="main-page-recipes-section">
-          {/* <div className="flex overflow-x-auto whitespace-nowrap space-x-2 md:space-x-6 md:ml-16">
-            
-            <TagItem name="pizza" deg="200" />
-            <TagItem name="cheese" />
-            <TagItem name="pasta" />
-            <TagItem name="meat" />
-            <TagItem name="fish" />
-            <TagItem name="veggies" />
-            <TagItem name="fruit" />
-            <TagItem name="salad" />
-          </div> */}
-
           <div className="flex justify-between mb-12">
             <h5 className="text-6xl mt-12 mb-8 pl-3 md:ml-44 md:mt-24 md:mb-0">
               Recommended
