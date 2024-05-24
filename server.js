@@ -42,20 +42,34 @@ app.use(limiter);
 app.use(hpp());
 
 // Enable CORS
-app.use(
-  cors({
-    origin: "https://culinary-craft-app.vercel.app",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://culinary-craft-app.vercel.app",
+//     credentials: true,
+//   })
+// );
 
 // Set static foler
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "_data/images")));
 
 // Dev loggin middleware
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
+}
+
+if (process.env.NODE_ENV === "production") {
+  // set static folder
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+  // any route that is not api will be redirected to index.html
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running...");
+  });
 }
 
 // Mount routers
