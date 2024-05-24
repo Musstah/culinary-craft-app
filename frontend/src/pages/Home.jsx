@@ -136,7 +136,7 @@ function Home() {
             </a>
           </div>
 
-          <div className="flex whitespace-nowrap mb-16 md:flex-row md:flex-wrap md:ml-28">
+          <div className="flex whitespace-nowrap md:flex-row md:flex-wrap md:ml-28">
             {randomArr.map((val, index) => (
               <div key={index}>
                 {data.data[val] ? (
@@ -199,28 +199,33 @@ function Home() {
           </div>
         </section>
       )}
-      <section className="highest-rated-section mb-20">
-        <a
-          href={`recipes/${highestRated["_id"]}`}
-          className="group flex md:flex-row justify-center items-center space-x-20"
-        >
-          <div className="flex flex-col max-w-md group-hover:text-stone-400">
+      <section className="highest-rated-section mb-10">
+        <div className="flex md:flex-row h-screen justify-center items-center space-x-20">
+          <div className="flex flex-col space-y-10 max-w-md">
             <h5 className="text-6xl mt-12 pl-3 md:mt-24">Highest rated!</h5>
-            <div className="flex flex-row text-wrap items-center space-x-3 pt-2  md:pt-8">
+            <div className="flex flex-row text-wrap items-center space-x-3 pt-2">
               <FontAwesomeIcon className="text-amber-300 h-8" icon={faStar} />
               <strong className="pr-3">{highestRated["averageRating"]}</strong>
             </div>
-            <h5 className="text-4xl my-4 pl-3 ">{highestRated["name"]}</h5>
+            <h5 className="text-4xl pl-3 ">{highestRated["name"]}</h5>
             <p className="">{highestRated["instructions"]}</p>
+            <Link
+              to={`recipes/${highestRated["_id"]}`}
+              type="button"
+              class="bg-gradient-to-r from-[#e3d5ca] via-[#e3d5ca] to-[#d6ccc2]
+        hover:bg-gradient-to-br
+        font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-4"
+            >
+              View Recipe
+            </Link>
           </div>
-          <div>
-            <img
-              className="md:w-72 md:h-72 rounded-full"
-              src={highestRated["img"]}
-              alt=""
-            />
-          </div>
-        </a>
+
+          <img
+            className="w-full h-1/3 md:h-3/6 lg:w-1/3 lg:h-4/6 rounded-full object-cover"
+            src={highestRated["img"]}
+            alt=""
+          />
+        </div>
       </section>
     </>
   );

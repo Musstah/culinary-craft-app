@@ -86,7 +86,7 @@ function Recipe() {
           className="absolute top-80 w-full h-full object-cover md:w-1/2 md:mt-24 md:rounded-3xl rounded-t-[30px]"
         /> */}
 
-        <div className="flex flex-col h-full grow pt-4 md:w-1/2 md:rounded-3xl space-y-3 bg-slate-200 bg-opacity-70">
+        <div className="flex flex-col h-full grow pt-4 md:w-1/2 md:rounded-3xl space-y-3 bg-[#f5ebe0] bg-opacity-70">
           <h2 className="text-2xl font-bold px-8 text-black text-center">
             {recipeData.data.name}
           </h2>
