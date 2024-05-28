@@ -50,27 +50,34 @@ app.use(hpp());
 // );
 
 // Set static foler
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "_data/images")));
 
+app.use(express.static(path.join(__dirname, "./frontend/build")));
+
+// // any route that is not api will be redirected to index.html
+// app.get("*", (req, res) =>
+//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+// );
+
 // Dev loggin middleware
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
+// if (process.env.NODE_ENV === "development") {
+//   app.use(morgan("dev"));
+// }
 
-if (process.env.NODE_ENV === "production") {
-  // set static folder
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
+// if (process.env.NODE_ENV === "development") {
+//   // set static folder
+//   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-  // any route that is not api will be redirected to index.html
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running...");
-  });
-}
+//   // any route that is not api will be redirected to index.html
+//   app.get("*", (req, res) =>
+//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+//   );
+// } else {
+//   app.get("/", (req, res) => {
+//     res.send("API is running...");
+//   });
+// }
 
 // Mount routers
 app.use("/api/v1/recipes", recipes);
