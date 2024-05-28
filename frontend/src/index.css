@@ -95,3 +95,11 @@ code {
 .navigate-icon {
   @apply text-2xl w-10 md:hidden;
 }
+
+@media (max-width: 640px) {
+  .header {
+    background: url("../../_data/images/platebackground.jpg") no-repeat center;
+    background-size: auto;
+    /* background-size: 100% 100%; */
+  }
+}

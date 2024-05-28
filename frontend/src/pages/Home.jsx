@@ -71,12 +71,14 @@ function Home() {
 
   return (
     <>
-      <header className="header relative h-[100vh] flex flex-col justify-center gap-4 pl-4 xl:pl-[11rem] 2xl:pl-[22rem]">
-        <h1 className="text-5xl xl:text-6xl text-[#00afb9]">Dom's Cullinary</h1>
-        <p className="typing-text text-3xl xl:text-4xl font-bold"></p>
+      <header className="header relative h-[100vh] flex flex-col md:justify-center gap-4 pl-4 xl:pl-[11rem] 2xl:pl-[22rem]">
+        <h1 className="text-4xl mt-32 md:mt-0 md:text-5xl xl:text-6xl text-[#00afb9]">
+          Dom's Cullinary
+        </h1>
+        <p className="typing-text text-xl md:text-3xl xl:text-4xl font-bold"></p>
 
         {/* Input and SVG Container */}
-        <div className="relative md:hidden flex border-b mb-4">
+        {/* <div className="relative md:hidden flex border-b mb-4">
           <input
             type="text"
             className="mx-2 px-2 pb-1 w-full h-10 bg-stone-100 rounded-md focus:shadow-md border-none md:w-80 
@@ -99,9 +101,9 @@ function Home() {
               <line x1="21" y1="21" x2="15" y2="15" />
             </svg>
           </button>
-        </div>
+        </div> */}
 
-        <div className="social flex absolute gap-7 bottom-24 md:bottom-12 left-1/2 -translate-x-[50%]">
+        <div className="social flex absolute gap-4 md:gap-7 bottom-8 md:bottom-12 left-1/2 -translate-x-[50%]">
           <a href="#">
             <FontAwesomeIcon className="" icon={faTwitter} />
           </a>
