@@ -133,13 +133,13 @@ function Home() {
               </h5>
               <a
                 href="/recipes"
-                className="text-2xl mt-12 mb-8 pl-3 md:mr-64 md:mt-24 md:mb-0 hover:text-[#00afb9]"
+                className="hidden md:block text-2xl mt-12 mb-8 pl-3 md:mr-64 md:mt-24 md:mb-0 hover:text-[#00afb9]"
               >
                 View all recipes
               </a>
             </div>
 
-            <div className="flex whitespace-nowrap md:flex-row md:flex-wrap md:ml-28">
+            <div className="flex whitespace-nowrap overflow-x-auto md:overflow-hidden md:flex-row md:flex-wrap md:ml-28">
               {randomArr.map((val, index) => (
                 <div key={index}>
                   {data.data[val] ? (
@@ -202,10 +202,12 @@ function Home() {
             </div>
           </section>
 
-          <section className="highest-rated-section mb-10">
-            <div className="flex md:flex-row h-screen justify-center items-center space-x-20">
-              <div className="flex flex-col space-y-10 max-w-md">
-                <h5 className="text-6xl mt-12 pl-3 md:mt-24">Highest rated!</h5>
+          <section className="highest-rated-section my-12 md:my-0 md:mb-10">
+            <div className="flex flex-col md:flex-row h-screen justify-center items-center space-x-20">
+              <div className="flex flex-col space-y-10 max-w-md px-2 md:px-0">
+                <h5 className="text-5xl md:text-6xl mt-12 pl-3 md:mt-24">
+                  Highest rated!
+                </h5>
                 <div className="flex flex-row text-wrap items-center space-x-3 pt-2">
                   <FontAwesomeIcon
                     className="text-amber-300 h-8"
@@ -215,8 +217,14 @@ function Home() {
                     {highestRated["averageRating"]}
                   </strong>
                 </div>
-                <h5 className="text-4xl pl-3 ">{highestRated["name"]}</h5>
+                <h5 className="text-4xl md:pl-3 ">{highestRated["name"]}</h5>
                 <p className="">{highestRated["instructions"]}</p>
+                {/* Mobile img */}
+                <img
+                  className="md:hidden w-96 h-64 rounded-lg object-cover"
+                  src={highestRated["img"]}
+                  alt=""
+                />
                 <Link
                   to={`recipes/${highestRated["_id"]}`}
                   type="button"
@@ -228,13 +236,15 @@ function Home() {
                 </Link>
               </div>
 
+              {/* Desktop img */}
               <img
-                className="w-full h-1/3 md:h-3/6 lg:w-1/3 lg:h-4/6 rounded-full object-cover"
+                className="hidden md:block w-full h-1/3 md:h-3/6 lg:w-1/3 lg:h-4/6 rounded-full object-cover"
                 src={highestRated["img"]}
                 alt=""
               />
             </div>
           </section>
+          <div className="h-40 md:hidden"></div>
         </>
       )}
     </>

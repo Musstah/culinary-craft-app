@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { RecipeProvider } from "./context/Recipes/RecipeContext";
-import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Recipe from "./pages/Recipe";
@@ -15,7 +14,6 @@ function App() {
     <RecipeProvider>
       <AuthProvider>
         <Router>
-          {/* <Header /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recipes/:recipeId" element={<Recipe />} />

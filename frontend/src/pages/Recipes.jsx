@@ -71,7 +71,7 @@ function Recipies() {
         </div>
       </section>
       {/* Input and SVG Container */}
-      <div className="relative md:hidden flex border-b mb-4">
+      {/* <div className="relative md:hidden flex border-b mb-4">
         <input
           type="text"
           className="mx-2 px-2 pb-1 w-full h-10 bg-stone-100 rounded-md focus:shadow-md border-none md:w-80 
@@ -94,7 +94,7 @@ function Recipies() {
             <line x1="21" y1="21" x2="15" y2="15" />
           </svg>
         </button>
-      </div>
+      </div> */}
 
       <div className="flex flex-row flex-wrap self-end justify-start bg-slate-200 bg-opacity-50 md:bg-transparent p-2 mb-4 md:mt-4 text-gray-900 md:max-h-fit">
         {data.count > 0 ? (
@@ -133,7 +133,7 @@ function Recipies() {
 
                 {/* Mobile Image */}
                 <img
-                  src={`https://culinaryapp.onrender.com/imagesSmall/${recipe.img}`}
+                  src={`/imagesSmall/${recipe.img}`}
                   alt="img"
                   className="md:hidden w-40 h-40 rounded-xl object-cover"
                 />

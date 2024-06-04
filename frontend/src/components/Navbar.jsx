@@ -15,19 +15,31 @@ function Navbar() {
 
   const currentPath = window.location.pathname;
 
+  // Check if we're on md breakpoint
+  function isGreaterThanMd() {
+    const breakpointDetector = document.getElementById("breakpoint-detector");
+    return breakpointDetector.offsetParent !== null;
+  }
+
   // User Scroll For Navbar
   function userScroll() {
     const navbar = document.querySelector(".navbar");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 850) {
+      if (isGreaterThanMd() && window.scrollY > 850) {
         navbar.classList.add("bg-[#d6ccc2]");
         navbar.classList.add("bg-opacity-80");
-      } else {
+      } else if (isGreaterThanMd() && window.scrollY < 850) {
         navbar.classList.remove("bg-[#d6ccc2]");
         navbar.classList.remove("bg-opacity-80");
       }
     });
+
+    if (!isGreaterThanMd()) {
+      navbar.classList.add("bg-[#d6ccc2]");
+    } else {
+      navbar.classList.remove("bg-[#d6ccc2]");
+    }
   }
 
   const pathMatchRoute = (route) => {
@@ -45,6 +57,7 @@ function Navbar() {
       className="navbar transition-all duration-500 fixed bottom-0 right-0 z-50 mx-auto w-full h-20
     md:mx-0 md:top-0 md:right-0"
     >
+      <div id="breakpoint-detector" class="hidden md:block"></div>
       <nav className="flex justify-end md:mt-2">
         <ul
           className={`grid max-w-lg gap-12 grid-cols-3 md:mr-28 font-medium justify-center`}
@@ -81,7 +94,7 @@ function Navbar() {
               icon={faBowlFood}
               className={
                 currentPath.startsWith("/recipes")
-                  ? "navigate-icon text-neutral-400"
+                  ? "navigate-icon text-[#0081a7]"
                   : "navigate-icon"
               }
             />
