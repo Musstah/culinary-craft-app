@@ -120,7 +120,14 @@ function Recipe() {
               <p>{`${recipeData.data.averageTime} mins`}</p>
             </div>
           </div>
-          <div className="flex flex-col px-6 space-y-1 items-start">
+
+          {/* Horizontal Line */}
+          <div className="w-11/12 border-b border-zinc-400 opacity-50 mx-auto"></div>
+          <p className="text-xl font-bold pb-2 px-4 md:px-6">Description</p>
+          <p className="font-thin text-black text-center overflow-y-auto md:px-32">
+            {recipeData.data.instructions}
+          </p>
+          <div className="flex flex-col pt-6 px-6 space-y-1 items-start">
             {Object.entries(recipeData.data.ingredients).map(
               ([ingredient, value], index) => (
                 <p className="text-black" key={index}>
@@ -128,11 +135,6 @@ function Recipe() {
                 </p>
               )
             )}
-            {/* Horizontal Line */}
-            <div className="w-11/12 border-b border-zinc-400 opacity-50 mx-auto"></div>
-            <p className="font-thin text-black text-center overflow-y-auto md:px-32">
-              {recipeData.data.instructions}
-            </p>
           </div>
           {/* Div to add some space */}
           <div className="h-8 mb-24 md:mb-2"></div>

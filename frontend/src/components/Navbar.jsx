@@ -36,9 +36,9 @@ function Navbar() {
     });
 
     if (!isGreaterThanMd()) {
-      navbar.classList.add("bg-[#d6ccc2]");
+      navbar.classList.add("bg-slate-50");
     } else {
-      navbar.classList.remove("bg-[#d6ccc2]");
+      navbar.classList.remove("bg-slate-50");
     }
   }
 
@@ -54,11 +54,11 @@ function Navbar() {
 
   return (
     <footer
-      className="navbar transition-all duration-500 fixed bottom-0 right-0 z-50 mx-auto w-full h-20
+      className="navbar transition-all duration-500  fixed bottom-0 right-0 z-50 mx-auto w-full h-20
     md:mx-0 md:top-0 md:right-0"
     >
       <div id="breakpoint-detector" class="hidden md:block"></div>
-      <nav className="flex justify-end md:mt-2">
+      <nav className="flex justify-center md:justify-end md:mt-2">
         <ul
           className={`grid max-w-lg gap-12 grid-cols-3 md:mr-28 font-medium justify-center`}
         >
