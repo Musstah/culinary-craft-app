@@ -53,16 +53,18 @@ function SignIn() {
         <main>
           {/* Horizontal Line */}
           <div className="w-11/12 border-b border-zinc-300"></div>
-          <form onSubmit={onSubmit}>
-            <div className="flex flex-row pt-6 pb-2 space-x-2">
-              <input
-                type="email"
-                className="form-input"
-                placeholder="Email"
-                id="email"
-                value={email}
-                onChange={onChange}
-              />
+          <form onSubmit={onSubmit} className="">
+            <div className="flex">
+              <div className="">
+                <input
+                  type="email"
+                  className="form-input"
+                  placeholder="Email"
+                  id="email"
+                  value={email}
+                  onChange={onChange}
+                />
+              </div>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -79,13 +81,13 @@ function SignIn() {
                 />
               </div>
             </div>
-            <div className="text-center mb-4">
+            <div className="text-center mt-4">
               <Link to="/forgot-password" className="font-thin text-sky-500">
                 Forgot Password
               </Link>
             </div>
 
-            <div className="flex flex-col items-center space-y-8 mt-20">
+            <div className="flex flex-col items-center space-y-8 mt-8 md:mt-20">
               <button
                 type="submit"
                 className="w-5/6 text-white bg-gradient-to-r from-cyan-400 via-cyan-500 
@@ -117,22 +119,14 @@ function SignIn() {
               className="w-full flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm
                 hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5"
             >
-              <img
-                src="https://culinaryapp.onrender.com/facebook.png"
-                alt=""
-                className="w-9"
-              />
+              <img src="/facebook.png" alt="" className="w-9" />
               <span className="font-thin">Facebook</span>
             </button>
             <button
               className="w-full flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm
                 hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5"
             >
-              <img
-                src="https://culinaryapp.onrender.com/google.png"
-                alt=""
-                className="w-9"
-              />
+              <img src="/google.png" alt="" className="w-9" />
               <span className="font-thin">Google</span>
             </button>
           </div>

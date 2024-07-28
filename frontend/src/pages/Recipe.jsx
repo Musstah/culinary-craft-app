@@ -123,11 +123,15 @@ function Recipe() {
 
           {/* Horizontal Line */}
           <div className="w-11/12 border-b border-zinc-400 opacity-50 mx-auto"></div>
-          <p className="text-xl font-bold pb-2 px-4 md:px-6">Description</p>
-          <p className="font-thin text-black text-center overflow-y-auto md:px-32">
-            {recipeData.data.instructions}
-          </p>
-          <div className="flex flex-col pt-6 px-6 space-y-1 items-start">
+
+          {/* Description and igredients div */}
+
+          <div className="flex flex-col pt-2 px-6 space-y-1 items-start">
+            <p className="text-xl font-bold pb-2">Description</p>
+            <p className="font-thin text-black text-center overflow-y-auto md:px-32">
+              {recipeData.data.instructions}
+            </p>
+            <p className="text-xl py-2 font-bold">Ingredients:</p>
             {Object.entries(recipeData.data.ingredients).map(
               ([ingredient, value], index) => (
                 <p className="text-black" key={index}>
