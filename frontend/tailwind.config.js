@@ -1,8 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // ✅ Custom color names
+        "custom-bg": {
+          light: "#edede9",
+          dark: "#060606",
+        },
+        fontFamily: {
+          serif: ["Playfair Display", "serif"],
+          sans: ["Inter", "sans-serif"],
+        },
+      },
+    },
   },
   plugins: [],
 };

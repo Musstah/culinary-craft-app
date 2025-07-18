@@ -42,7 +42,7 @@ function Recipe() {
         <img
           src={`/${recipeData.data.img}`}
           alt="img"
-          className="w-full h-64 object-cover md:w-1/2 md:h-96 md:mt-24 md:rounded-3xl"
+          className="object-cover w-full h-64 md:w-1/2 md:h-96 md:mt-24 md:rounded-3xl"
         />
         <div className="absolute flex flex-row space-x-2 top-2 right-2 md:top-28 md:right-1/4 md:mr-4">
           <button
@@ -86,12 +86,12 @@ function Recipe() {
           className="absolute top-80 w-full h-full object-cover md:w-1/2 md:mt-24 md:rounded-3xl rounded-t-[30px]"
         /> */}
 
-        <div className="flex flex-col h-full grow pt-4 md:w-1/2 md:rounded-3xl space-y-3 bg-[#f5ebe0] bg-opacity-70">
-          <h2 className="text-2xl font-bold px-8 text-black text-center">
+        <div className="flex flex-col h-full pt-4 space-y-3 grow md:w-1/2 md:rounded-3xl">
+          <h2 className="w-4/6 font-serif text-5xl font-bold tracking-wide dark:text-stone-100">
             {recipeData.data.name}
           </h2>
-          <div className="flex flex-row justify-between items-center px-6">
-            <div className="flex flex-col  items-center">
+          <div className="flex flex-row items-center justify-between font-sans text-xl dark:text-gray-300">
+            <div className="flex items-center space-x-2">
               {recipeData.data.level === "Expert" ? (
                 <div className="flex flex-row mb-1">
                   <FontAwesomeIcon className="text-amber-300" icon={faStar} />
@@ -115,30 +115,46 @@ function Recipe() {
               <strong>Rating</strong>
               <p>{recipeData.data.averageRating}</p>
             </div>
-            <div className="flex flex-col">
+            <div className="flex space-x-3">
               <FontAwesomeIcon className="mb-1" icon={faClock} />
               <p>{`${recipeData.data.averageTime} mins`}</p>
             </div>
           </div>
 
           {/* Horizontal Line */}
-          <div className="w-11/12 border-b border-zinc-400 opacity-50 mx-auto"></div>
+          <div className="w-11/12 mx-auto border-b opacity-50 border-zinc-400 dark:border-gray-100"></div>
 
           {/* Description and igredients div */}
 
-          <div className="flex flex-col pt-2 px-6 space-y-1 items-start">
-            <p className="text-xl font-bold pb-2">Description</p>
-            <p className="font-thin text-black text-center overflow-y-auto md:px-32">
-              {recipeData.data.instructions}
-            </p>
-            <p className="text-xl py-2 font-bold">Ingredients:</p>
-            {Object.entries(recipeData.data.ingredients).map(
-              ([ingredient, value], index) => (
-                <p className="text-black" key={index}>
-                  <strong>{ingredient}:</strong> {value}
-                </p>
-              )
-            )}
+          <div className="flex flex-col justify-around gap-6 pt-8 text-center md:flex-row dark:text-stone-100">
+            {/* INGREDIENTS */}
+            <div className="md:w-1/2">
+              <p className="py-4 font-serif text-4xl font-bold tracking-wide dark:text-stone-100">
+                Ingredients
+              </p>
+              <ul className="px-8 space-y-2 font-sans text-lg text-left list-disc list-inside md:text-xl dark:text-stone-300">
+                {Object.entries(recipeData.data.ingredients).map(
+                  ([ingredient, value], index) => (
+                    <li key={index}>
+                      <strong className="capitalize dark:text-stone-100">
+                        {ingredient}
+                      </strong>
+                      : {value}
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            {/* INSTRUCTIONS */}
+            <div className="md:w-1/2">
+              <p className="pb-4 font-serif text-4xl font-bold tracking-wide dark:text-stone-100 ">
+                Instructions
+              </p>
+              <p className="px-4 overflow-y-auto font-sans text-lg leading-relaxed text-justify md:text-2xl dark:text-stone-300 md:px-12">
+                {recipeData.data.instructions}
+              </p>
+            </div>
           </div>
           {/* Div to add some space */}
           <div className="h-8 mb-24 md:mb-2"></div>
