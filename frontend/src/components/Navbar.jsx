@@ -130,11 +130,11 @@ function Navbar() {
             <p>Profile</p>
           </li>
           <li>
-            <button onClick={() => setDarkMode(!darkMode)}>
+            <button className="mt-2" onClick={() => setDarkMode(!darkMode)}>
               {darkMode ? (
-                <FiSun className="text-4xl" />
+                <FiSun className="text-3xl" />
               ) : (
-                <FiMoon className="text-4xl" />
+                <FiMoon className="text-3xl" />
               )}
             </button>
           </li>
