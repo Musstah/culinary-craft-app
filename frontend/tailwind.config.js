@@ -9,6 +9,7 @@ module.exports = {
         "custom-bg": {
           light: "#edede9",
           dark: "#060606",
+          darkLogin: "#111112",
         },
         fontFamily: {
           serif: ["Playfair Display", "serif"],

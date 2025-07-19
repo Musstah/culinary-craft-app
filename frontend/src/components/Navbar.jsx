@@ -66,7 +66,7 @@ function Navbar() {
       <div id="breakpoint-detector" class="hidden md:block"></div>
       <nav className="flex justify-center md:justify-end md:mt-2 dark:text-gray-100">
         <ul
-          className={`grid max-w-lg gap-12 grid-cols-3 md:mr-28 font-medium justify-center`}
+          className={`grid gap-12 grid-cols-4 md:mr-28 font-medium justify-center`}
         >
           <li
             className={
@@ -131,11 +131,11 @@ function Navbar() {
           </li>
           <li>
             <button onClick={() => setDarkMode(!darkMode)}>
-              {/* {darkMode ? (
-                <FiSun className="relative z-10 text-lg md:text-sm" />
+              {darkMode ? (
+                <FiSun className="text-4xl" />
               ) : (
-                <FiMoon className="relative z-10 text-lg md:text-sm" />
-              )} */}
+                <FiMoon className="text-4xl" />
+              )}
             </button>
           </li>
         </ul>

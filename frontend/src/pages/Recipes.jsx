@@ -26,7 +26,7 @@ function Recipies() {
   ) : (
     <>
       <section className="">
-        <h5 className="pl-3 mt-12 mb-8 font-serif text-5xl font-bold tracking-wide md:text-8xl md:ml-16 md:mt-20 md:mb-12 dark:text-stone-100">
+        <h5 className="pl-3 mt-12 mb-8 font-serif text-5xl font-bold tracking-wide md:text-8xl md:ml-16 md:mt-20 md:mb-12 dark:text-stone-300">
           Explore recipes
         </h5>
         <div className="relative border-b w-80 h-8 mb-4 md:ml-16 md:mt-1.5">
@@ -111,23 +111,23 @@ function Recipies() {
                     alt="img"
                     className="hidden object-cover pt-3 duration-200 rounded-2xl md:block md:w-11/12 md:h-48 group-hover:scale-105"
                   />
-                  <a className="self-start pt-2 pl-4 font-sans text-lg font-bold leading-relaxed text-wrap text-stone-600 dark:text-stone-100 ">
+                  <a className="self-start pt-2 pl-4 font-sans text-lg font-bold leading-relaxed text-wrap text-stone-600 dark:text-stone-300 ">
                     {recipe.name}
                   </a>
                   <div className="flex flex-row justify-between w-full pb-8 pl-4 pr-2">
                     <div className="flex flex-row items-center pt-2 space-x-3 font-sans leading-relaxed">
                       <FontAwesomeIcon
-                        className="dark:text-stone-100"
+                        className="dark:text-stone-300"
                         icon={faClock}
                       />
-                      <strong className="pr-3 text-stone-600 dark:text-stone-100 ">{`${recipe.averageTime} mins`}</strong>
+                      <strong className="pr-3 text-stone-600 dark:text-stone-300 ">{`${recipe.averageTime} mins`}</strong>
                     </div>
                     <div className="flex flex-row items-center pt-2 space-x-3 font-sans leading-relaxed">
                       <FontAwesomeIcon
                         className="text-amber-300"
                         icon={faStar}
                       />
-                      <strong className="pr-3 text-stone-600 dark:text-stone-100 ">{`${recipe.averageRating}`}</strong>
+                      <strong className="pr-3 text-stone-600 dark:text-stone-300 ">{`${recipe.averageRating}`}</strong>
                     </div>
                   </div>
                 </div>

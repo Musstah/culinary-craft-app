@@ -91,7 +91,7 @@ code {
 }
 
 .form-input {
-  @apply w-44 border-2 rounded-md p-2 shadow-md focus:outline-none hover:shadow-none 
+  @apply w-full bg-white text-black dark:text-stone-300 dark:bg-black border-gray-300 dark:border-gray-700 placeholder:text-stone-600 dark:placeholder:text-stone-300 border rounded-xl p-2 shadow-md focus:outline-none hover:shadow-none 
   focus:shadow-none;
 }
 

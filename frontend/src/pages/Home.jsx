@@ -104,7 +104,7 @@ function Home() {
           <div className="w-screen px-24 container-2xl">
             <section className="main-page-recipes-section">
               <div className="flex justify-between mt-20 mb-4">
-                <a className="pl-4 font-serif text-3xl font-bold tracking-wide md:text-5xl dark:text-stone-100">
+                <a className="pl-4 font-serif text-3xl font-bold tracking-wide md:text-5xl dark:text-stone-300">
                   Recommended
                 </a>
                 <a
@@ -134,10 +134,10 @@ function Home() {
                               alt="img"
                               className="hidden object-cover pt-3 duration-200 rounded-2xl md:block md:w-11/12 md:h-48 group-hover:scale-105"
                             />
-                            <h4 className="self-start pt-2 pl-4 font-sans text-lg font-bold leading-relaxed text-wrap text-stone-600 dark:text-stone-100 ">
+                            <h4 className="self-start pt-2 pl-4 font-sans text-lg font-bold leading-relaxed text-wrap text-stone-600 dark:text-stone-300 ">
                               {data.data[val].name}
                             </h4>
-                            <div className="flex flex-row justify-between w-full pl-4 pr-2 font-bold leading-relaxed text-wrap text-stone-600 dark:text-stone-100">
+                            <div className="flex flex-row justify-between w-full pl-4 pr-2 font-bold leading-relaxed text-wrap text-stone-600 dark:text-stone-300">
                               <div className="flex flex-row items-center pt-2 space-x-3">
                                 <FontAwesomeIcon className="" icon={faClock} />
                                 <strong className="pr-3 text-stone-600 dark:text-gray-100 ">{`${data.data[val].averageTime} mins`}</strong>
@@ -180,7 +180,7 @@ function Home() {
               <div className="flex flex-col justify-between md:flex-row md:items-center">
                 <div className="flex flex-col w-1/3 space-y-8">
                   <div className="flex flex-row items-center space-x-8">
-                    <h5 className="font-serif text-5xl font-bold tracking-wide dark:text-stone-100">
+                    <h5 className="font-serif text-5xl font-bold tracking-wide dark:text-stone-300">
                       Highest rated!
                     </h5>
                     <div className="flex flex-row items-center space-x-3 text-wrap">
@@ -188,13 +188,13 @@ function Home() {
                         className="h-8 text-amber-300"
                         icon={faStar}
                       />
-                      <strong className="font-serif font-bold tracking-wide md:text-5xl dark:text-stone-100">
+                      <strong className="font-serif font-bold tracking-wide md:text-5xl dark:text-stone-300">
                         {highestRated["averageRating"]}
                       </strong>
                     </div>
                   </div>
 
-                  <a className="font-serif text-3xl font-bold tracking-wide md:text-5xl dark:text-stone-100">
+                  <a className="font-serif text-3xl font-bold tracking-wide md:text-5xl dark:text-stone-300">
                     {highestRated["name"]}
                   </a>
                   <p className="overflow-y-auto font-sans text-lg leading-relaxed text-justify md:text-2xl dark:text-stone-300 md:pr-32">

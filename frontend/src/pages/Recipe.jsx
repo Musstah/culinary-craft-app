@@ -87,7 +87,7 @@ function Recipe() {
         /> */}
 
         <div className="flex flex-col h-full pt-4 space-y-3 grow md:w-1/2 md:rounded-3xl">
-          <h2 className="w-4/6 font-serif text-5xl font-bold tracking-wide dark:text-stone-100">
+          <h2 className="w-4/6 font-serif text-5xl font-bold tracking-wide dark:text-stone-300">
             {recipeData.data.name}
           </h2>
           <div className="flex flex-row items-center justify-between font-sans text-xl dark:text-gray-300">
@@ -115,8 +115,8 @@ function Recipe() {
               <strong>Rating</strong>
               <p>{recipeData.data.averageRating}</p>
             </div>
-            <div className="flex space-x-3">
-              <FontAwesomeIcon className="mb-1" icon={faClock} />
+            <div className="flex items-center space-x-3">
+              <FontAwesomeIcon className="" icon={faClock} />
               <p>{`${recipeData.data.averageTime} mins`}</p>
             </div>
           </div>
@@ -126,17 +126,17 @@ function Recipe() {
 
           {/* Description and igredients div */}
 
-          <div className="flex flex-col justify-around gap-6 pt-8 text-center md:flex-row dark:text-stone-100">
+          <div className="flex flex-col justify-around gap-6 pt-8 text-center md:flex-row dark:text-stone-300">
             {/* INGREDIENTS */}
             <div className="md:w-1/2">
-              <p className="py-4 font-serif text-4xl font-bold tracking-wide dark:text-stone-100">
+              <p className="py-4 font-serif text-4xl font-bold tracking-wide dark:text-stone-300">
                 Ingredients
               </p>
               <ul className="px-8 space-y-2 font-sans text-lg text-left list-disc list-inside md:text-xl dark:text-stone-300">
                 {Object.entries(recipeData.data.ingredients).map(
                   ([ingredient, value], index) => (
                     <li key={index}>
-                      <strong className="capitalize dark:text-stone-100">
+                      <strong className="capitalize dark:text-stone-300">
                         {ingredient}
                       </strong>
                       : {value}
@@ -148,7 +148,7 @@ function Recipe() {
 
             {/* INSTRUCTIONS */}
             <div className="md:w-1/2">
-              <p className="pb-4 font-serif text-4xl font-bold tracking-wide dark:text-stone-100 ">
+              <p className="pb-4 font-serif text-4xl font-bold tracking-wide dark:text-stone-300 ">
                 Instructions
               </p>
               <p className="px-4 overflow-y-auto font-sans text-lg leading-relaxed text-justify md:text-2xl dark:text-stone-300 md:px-12">
