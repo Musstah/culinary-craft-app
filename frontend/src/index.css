@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* This is to siable autofill for inputs */
+@layer utilities {
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+  }
+
+  .dark input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px #000 inset !important;
+    -webkit-text-fill-color: white !important;
+  }
+}
+
 :root {
   --cerulean: #0081a7;
   --verdigris: #00afb9;
@@ -91,7 +104,7 @@ code {
 }
 
 .form-input {
-  @apply w-full bg-white text-black dark:text-stone-300 dark:bg-black border-gray-300 dark:border-gray-700 placeholder:text-stone-600 dark:placeholder:text-stone-300 border rounded-xl p-2 shadow-md focus:outline-none hover:shadow-none 
+  @apply w-full bg-white text-black dark:text-stone-300  dark:bg-black border-gray-300 dark:border-gray-700 placeholder:text-stone-600 dark:placeholder:text-stone-300 border rounded-xl p-2 shadow-md focus:outline-none hover:shadow-none 
   focus:shadow-none;
 }
 
