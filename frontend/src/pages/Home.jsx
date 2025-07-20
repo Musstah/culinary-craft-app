@@ -107,12 +107,12 @@ function Home() {
                 <a className="pl-4 font-serif text-3xl font-bold tracking-wide md:text-5xl dark:text-stone-300">
                   Recommended
                 </a>
-                <a
-                  href="/recipes"
+                <Link
+                  to="/recipes"
                   className="hidden md:block text-2xl pr-20 dark:text-gray-100 hover:text-[#00afb9] dark:hover:text-[#00afb9] "
                 >
                   View all recipes
-                </a>
+                </Link>
               </div>
 
               <div className="flex gap-6 overflow-x-auto whitespace-nowrap md:overflow-hidden md:flex-row md:flex-wrap">
