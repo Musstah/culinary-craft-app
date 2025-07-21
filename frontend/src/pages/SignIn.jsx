@@ -44,10 +44,10 @@ function SignIn() {
 
   return (
     <>
-      <div className="flex flex-col items-center w-full mx-auto">
-        <main className=" bg-slate-50 dark:bg-neutral-950 border border-gray-300 dark:border-gray-700 md:w-1/5 md:mt-[5%]">
+      <div className="flex flex-col items-center w-full mx-auto mt-[10%] md:mt-0 ">
+        <main className=" bg-slate-50 min-w-[300px] min-h-[620px] dark:bg-neutral-950 border border-gray-300 dark:border-gray-700 md:w-1/5 md:mt-[5%]">
           <header>
-            <h2 className="my-12 font-serif text-4xl font-bold text-center md:my-6 text-stone-600 dark:text-stone-300 md:mt-20">
+            <h2 className="my-12 font-serif text-3xl font-bold text-center md:my-6 text-stone-600 dark:text-stone-300 md:mt-20">
               Welcome Back!
             </h2>
           </header>

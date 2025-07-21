@@ -71,28 +71,28 @@ function Home() {
 
   return (
     <>
-      <header className="header relative h-[100vh] flex flex-col md:justify-center gap-4 pl-4 xl:pl-[11rem] 2xl:pl-[22rem]">
-        <h1 className="text-4xl mt-32 md:mt-0 md:text-5xl xl:text-6xl text-[#00afb9]">
+      <header className="header relative h-[45vh] md:h-[100vh] flex flex-col md:justify-center gap-4 pl-4 xl:pl-[11rem] 2xl:pl-[22rem]">
+        <h1 className="text-4xl mt-12 md:mt-0 md:text-5xl xl:text-6xl text-[#00afb9]">
           Dom's Cullinary
         </h1>
 
-        <p className="text-xl font-bold typing-text md:text-3xl xl:text-4xl dark:text-gray-300"></p>
+        <p className="pr-32 text-xl font-bold text-left md:pr-0 md:px-0 typing-text md:text-3xl xl:text-4xl dark:text-gray-300"></p>
 
-        <div className="social flex absolute gap-4 md:gap-7 bottom-8 md:bottom-12 left-1/2 -translate-x-[50%] dark:text-gray-100">
+        <div className="social flex absolute gap-4 md:gap-7 bottom-2 md:bottom-12 left-1/2 -translate-x-[50%] dark:text-gray-100">
           <a href="#">
-            <FontAwesomeIcon className="" icon={faTwitter} />
+            <FontAwesomeIcon className="w-8 md:w-14" icon={faTwitter} />
           </a>
           <a href="#">
-            <FontAwesomeIcon className="" icon={faInstagram} />
+            <FontAwesomeIcon className="w-8 md:w-14" icon={faInstagram} />
           </a>
           <a href="#">
-            <FontAwesomeIcon className="" icon={faFacebook} />
+            <FontAwesomeIcon className="w-8 md:w-14" icon={faFacebook} />
           </a>
           <a href="#">
-            <FontAwesomeIcon className="" icon={faYoutube} />
+            <FontAwesomeIcon className="w-8 md:w-14" icon={faYoutube} />
           </a>
           <a href="#">
-            <FontAwesomeIcon className="" icon={faGithub} />
+            <FontAwesomeIcon className="w-8 md:w-14" icon={faGithub} />
           </a>
         </div>
       </header>
@@ -101,10 +101,10 @@ function Home() {
         <Spinner />
       ) : (
         <>
-          <div className="w-screen px-24 container-2xl">
+          <div className="w-screen px-2 md:px-24 container-2xl">
             <section className="main-page-recipes-section">
-              <div className="flex justify-between mt-20 mb-4">
-                <a className="pl-4 font-serif text-3xl font-bold tracking-wide md:text-5xl dark:text-stone-300">
+              <div className="flex mt-4 mb-8 md:mb-2 md:mt-20 md:justify-between">
+                <a className="font-serif text-3xl font-bold tracking-wide md:pl-4 md:text-5xl dark:text-stone-300">
                   Recommended
                 </a>
                 <Link
@@ -115,7 +115,7 @@ function Home() {
                 </Link>
               </div>
 
-              <div className="flex gap-6 overflow-x-auto whitespace-nowrap md:overflow-hidden md:flex-row md:flex-wrap">
+              <div className="flex overflow-x-auto md:gap-6 whitespace-nowrap md:overflow-hidden md:flex-row md:flex-wrap">
                 {randomArr.map((val, index) => (
                   <div key={index}>
                     {data.data[val] ? (
@@ -177,13 +177,13 @@ function Home() {
             </section>
 
             <section className="my-12 highest-rated-section md:my-32 md:mb-10">
-              <div className="flex flex-col justify-between md:flex-row md:items-center">
-                <div className="flex flex-col w-1/3 space-y-8">
+              <div className="flex flex-col items-center md:justify-between md:flex-row">
+                <div className="flex flex-col w-full space-y-8 md:w-1/3">
                   <div className="flex flex-row items-center space-x-8">
-                    <h5 className="font-serif text-5xl font-bold tracking-wide dark:text-stone-300">
+                    <h5 className="font-serif text-5xl font-bold tracking-wide md:text-5xl dark:text-stone-300">
                       Highest rated!
                     </h5>
-                    <div className="flex flex-row items-center space-x-3 text-wrap">
+                    <div className="flex flex-row items-center pr-2 space-x-3 md:pr-0 text-wrap">
                       <FontAwesomeIcon
                         className="h-8 text-amber-300"
                         icon={faStar}
@@ -214,7 +214,7 @@ function Home() {
     hover:shadow-lg hover:shadow-[#bfae9b]/60
     transition-all duration-300 ease-in-out
     hover:scale-105
-    font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-4 w-1/4"
+    font-medium text-2xl rounded-xl md:rounded-lg md:text-sm px-5 py-2.5 text-center me-2 mb-2 mt-4 w-full md:w-1/4"
                   >
                     View Recipe
                   </Link>

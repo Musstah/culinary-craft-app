@@ -64,9 +64,10 @@ function Navbar() {
   return (
     <footer className="fixed bottom-0 right-0 z-50 w-full h-20 mx-auto transition-all duration-500 navbar md:mx-0 md:top-0 md:right-0">
       <div id="breakpoint-detector" class="hidden md:block"></div>
-      <nav className="flex justify-center md:justify-end md:mt-2 dark:text-gray-100">
+      <nav className="flex justify-between bg-slate-50 dark:bg-black dark:text-gray-300 md:justify-end md:mt-2 md:dark:bg-transparent md:bg-transparent">
+        {/* <nav className="flex justify-between bg-slate-50 dark:bg-black dark:text-gray-300 md:justify-end md:mt-2 md:bg-transparent"> */}
         <ul
-          className={`grid gap-12 grid-cols-4 md:mr-28 font-medium justify-center`}
+          className={`grid gap-2 md:gap-12 grid-cols-4 pl-6 md:pl-0 md:mr-28 font-medium justify-center`}
         >
           <li
             className={
@@ -130,11 +131,14 @@ function Navbar() {
             <p>Profile</p>
           </li>
           <li>
-            <button className="mt-2" onClick={() => setDarkMode(!darkMode)}>
+            <button
+              className="mt-4 md:mt-2"
+              onClick={() => setDarkMode(!darkMode)}
+            >
               {darkMode ? (
-                <FiSun className="text-3xl" />
+                <FiSun className="text-4xl" />
               ) : (
-                <FiMoon className="text-3xl" />
+                <FiMoon className="text-4xl " />
               )}
             </button>
           </li>

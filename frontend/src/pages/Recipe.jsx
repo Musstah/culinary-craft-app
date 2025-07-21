@@ -86,11 +86,11 @@ function Recipe() {
           className="absolute top-80 w-full h-full object-cover md:w-1/2 md:mt-24 md:rounded-3xl rounded-t-[30px]"
         /> */}
 
-        <div className="flex flex-col h-full pt-4 space-y-3 grow md:w-1/2 md:rounded-3xl">
-          <h2 className="w-4/6 font-serif text-5xl font-bold tracking-wide dark:text-stone-300">
+        <div className="flex flex-col w-full h-full pt-4 space-y-3 grow md:w-1/2 md:rounded-3xl">
+          <h2 className="w-full font-serif text-4xl font-bold tracking-wide text-center md:w-4/6 md:text-start md:text-5xl dark:text-stone-300">
             {recipeData.data.name}
           </h2>
-          <div className="flex flex-row items-center justify-between font-sans text-xl dark:text-gray-300">
+          <div className="flex flex-row items-center justify-between font-sans text-lg md:text-xl dark:text-gray-300">
             <div className="flex items-center space-x-2">
               {recipeData.data.level === "Expert" ? (
                 <div className="flex flex-row mb-1">
@@ -111,11 +111,11 @@ function Recipe() {
 
               <p>{recipeData.data.level}</p>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex items-center space-x-2 md:space-x-0 md:flex-col">
               <strong>Rating</strong>
               <p>{recipeData.data.averageRating}</p>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 ">
               <FontAwesomeIcon className="" icon={faClock} />
               <p>{`${recipeData.data.averageTime} mins`}</p>
             </div>
@@ -160,6 +160,7 @@ function Recipe() {
           <div className="h-8 mb-24 md:mb-2"></div>
         </div>
       </div>
+      <div className="h-20 md:hidden"></div>
     </>
   ) : (
     ""

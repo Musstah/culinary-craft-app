@@ -26,13 +26,13 @@ function Recipies() {
   ) : (
     <>
       <section className="">
-        <h5 className="pl-3 mt-12 mb-8 font-serif text-5xl font-bold tracking-wide md:text-8xl md:ml-16 md:mt-20 md:mb-12 dark:text-stone-300">
+        <h5 className="pl-3 mt-12 mb-8 font-serif text-5xl font-bold tracking-wide text-center md:text-left md:text-8xl md:ml-16 md:mt-20 md:mb-12 dark:text-stone-300">
           Explore recipes
         </h5>
-        <div className="relative border-b w-80 h-8 mb-4 md:ml-16 md:mt-1.5">
+        <div className="relative  w-80 h-8 mb-4 md:ml-16 md:mt-1.5">
           <input
             type="text"
-            className="w-full h-10 px-2 pb-1 mx-2 border-none rounded-md bg-stone-100 focus:shadow-md md:w-80 placeholder:font-thin focus:outline-none"
+            className="w-full h-10 px-2 pb-1 mx-2 text-black bg-white border border-gray-300 dark:text-white dark:border-gray-700 rounded-xl placeholder:text-black dark:bg-black dark:placeholder:text-white focus:shadow-md md:w-80 placeholder:font-thin focus:outline-none"
             placeholder="Search"
             onChange={(e) => {
               onChange(e.target.value);
@@ -56,7 +56,7 @@ function Recipies() {
           </button>
         </div>
         {/* Input and SVG Container */}
-        <div className="relative flex mb-4 border-b"></div>
+        {/* <div className="relative flex w-11/12 mx-auto mt-10 border-b"></div> */}
         <div className="flex space-x-2 overflow-x-auto whitespace-nowrap md:space-x-6 md:ml-16">
           {/* Tag Items */}
           <TagItem name="pizza" deg="200" />
@@ -69,32 +69,8 @@ function Recipies() {
           <TagItem name="salad" />
         </div>
       </section>
-      {/* Input and SVG Container */}
-      {/* <div className="relative flex mb-4 border-b md:hidden">
-        <input
-          type="text"
-          className="w-full h-10 px-2 pb-1 mx-2 border-none rounded-md bg-stone-100 focus:shadow-md md:w-80 placeholder:font-thin focus:outline-none"
-          placeholder="Search"
-        />
-        <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="absolute w-8 text-gray-300 duration-200 hover:scale-110 right-4 bottom-1"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="10" cy="10" r="7" />
-            <line x1="21" y1="21" x2="15" y2="15" />
-          </svg>
-        </button>
-      </div> */}
 
-      <div className="flex flex-row flex-wrap self-end justify-start p-2 mb-4 text-gray-900 bg-opacity-50 bg-slate-200 md:bg-transparent md:mt-4 md:max-h-fit">
+      <div className="flex flex-row flex-wrap self-end justify-start p-2 mb-4 text-gray-900 bg-transparent bg-opacity-50 md:mt-4 md:max-h-fit">
         {data.count > 0 ? (
           data.data.map((recipe, index) => (
             // item
@@ -114,7 +90,7 @@ function Recipies() {
                   <a className="self-start pt-2 pl-4 font-sans text-lg font-bold leading-relaxed text-wrap text-stone-600 dark:text-stone-300 ">
                     {recipe.name}
                   </a>
-                  <div className="flex flex-row justify-between w-full pb-8 pl-4 pr-2">
+                  <div className="flex flex-row justify-between w-full pl-4 pr-2">
                     <div className="flex flex-row items-center pt-2 space-x-3 font-sans leading-relaxed">
                       <FontAwesomeIcon
                         className="dark:text-stone-300"
@@ -138,22 +114,26 @@ function Recipies() {
                   alt="img"
                   className="object-cover w-40 h-40 md:hidden rounded-xl"
                 />
-                {/* Info Container */}
-                <div className="flex flex-row justify-between w-11/12 mt-2 mb-4 md:hidden">
-                  <div
-                    className="flex flex-row items-center space-x-2 bg-slate-50 px-3 
-                py-0.5 rounded-xl bg-opacity-70"
-                  >
-                    <FontAwesomeIcon icon={faStar} />
-                    <p className="font-bold">{recipe.averageRating}</p>
+
+                <a className="font-sans font-bold leading-relaxed text-md text-wrap text-stone-600 dark:text-stone-300 ">
+                  {recipe.name}
+                </a>
+                <div className="flex flex-row justify-between w-full px-1 py-2 md:hidden">
+                  <div className="flex flex-row items-center space-x-1 font-sans leading-relaxed ">
+                    <FontAwesomeIcon
+                      className="dark:text-stone-300"
+                      icon={faClock}
+                    />
+                    <strong className=" text-stone-600 dark:text-stone-300">{`${recipe.averageTime} mins`}</strong>
                   </div>
-                  <strong className="pr-3">{`${recipe.averageTime} mins`}</strong>
+                  <div className="flex flex-row items-center space-x-1 font-sans leading-relaxed">
+                    <FontAwesomeIcon className="text-amber-300" icon={faStar} />
+                    <strong className=" text-stone-600 dark:text-stone-300">{`${recipe.averageRating}`}</strong>
+                  </div>
                 </div>
 
                 {/* Item Gradient */}
-                {/* <div
-                  className="absolute top-0 bottom-0 left-0 right-0 hidden md:block bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70"
-                ></div> */}
+                {/* <div className="absolute top-0 bottom-0 left-0 right-0 hidden md:block bg-gradient-to-b from-transparent group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70"></div> */}
               </Link>
             </div>
           ))

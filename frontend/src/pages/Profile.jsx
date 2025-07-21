@@ -38,7 +38,7 @@ function Profile() {
 
           {/* Horizontal Line */}
           <div className="w-11/12 mt-4 border-b opacity-50 border-zinc-500 md:mt-12 md:mb-14"></div>
-          <div className="flex flex-col items-center w-full mt-8 space-y-6 text-center border border-gray-300 md:w-1/4 bg-slate-50 dark:bg-neutral-950 dark:border-gray-700">
+          <div className="flex  min-w-[300px] min-h-[520px] flex-col items-center w-full mt-8 space-y-6 text-center border border-gray-300 md:w-1/4 bg-slate-50 dark:bg-neutral-950 dark:border-gray-700">
             <img
               className="object-cover w-48 h-48 mt-6 rounded-full"
               src={currentUser.data.image || "/avatar.jpg"}
