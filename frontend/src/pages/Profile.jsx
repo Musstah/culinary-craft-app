@@ -88,7 +88,7 @@ function Profile() {
                 Logout
               </button>
               {/* This div is to add margin on bottom */}
-              <div className="h-2"></div>
+              <div className="h-23 md:h-2"></div>
             </div>
           </div>
         </div>
